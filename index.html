@@ -18,7 +18,6 @@
     --muted: #8a8478;
     --rule: #e5e1d6;
     --accent: #8b3a1f;
-    --accent-soft: #c4623e;
     --paper: #ffffff;
   }
 
@@ -30,171 +29,164 @@
     color: var(--ink);
     font-family: "Newsreader", Georgia, serif;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 1.65;
+    font-size: 17px;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
-  .top-bar {
-    height: 6px;
-    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-soft) 40%, var(--ink) 100%);
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s ease;
   }
+  a:hover { border-bottom-color: var(--accent); }
 
   .wrap {
-    max-width: 880px;
+    max-width: 780px;
     margin: 0 auto;
-    padding: 0 32px;
+    padding: 64px 32px 96px;
   }
 
-  /* Nav */
-  nav.top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 28px 0 0;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  nav.top .home { color: var(--ink); text-decoration: none; font-weight: 500; }
-  nav.top ul { list-style: none; display: flex; gap: 22px; }
-  nav.top a { color: var(--ink-soft); text-decoration: none; transition: color .2s ease; }
-  nav.top a:hover { color: var(--accent); }
-
-  /* Hero */
+  /* ====== Header (compact, photo + name side-by-side) ====== */
   header.hero {
-    padding: 72px 0 56px;
     display: grid;
-    /* 사진이 들어갈 공간을 160px에서 220px로 넓혔습니다 */
-    grid-template-columns: 1fr 220px;
-    gap: 48px;
-    align-items: start;
+    grid-template-columns: 140px 1fr;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 48px;
   }
   header.hero .photo {
-    /* 사진 크기를 키우고 (220px), 원형(50%)에서 모서리가 살짝 둥근 정사각형(8px)으로 변경했습니다 */
-    width: 220px; height: 220px;
-    border-radius: 8px; 
+    width: 140px; height: 140px;
     background: var(--rule);
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 12px 32px rgba(26,24,20,0.08);
+    border-radius: 4px;
   }
-  header.hero .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  header.hero .eyebrow {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 14px;
+  header.hero .photo img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
   }
   header.hero h1 {
-    font-size: 52px; font-weight: 500;
-    line-height: 1.05; letter-spacing: -0.02em;
-    margin-bottom: 20px;
-  }
-  header.hero h1 .first { font-style: italic; font-weight: 400; }
-  header.hero p.tagline {
-    font-size: 19px; color: var(--ink-soft);
-    max-width: 56ch; margin-bottom: 24px;
-  }
-  header.hero p.tagline em { color: var(--accent); font-style: normal; font-weight: 500; }
-
-  .links {
-    display: flex; flex-wrap: wrap; gap: 6px;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 12px; letter-spacing: 0.04em;
-  }
-  .links a {
-    color: var(--ink); text-decoration: none;
-    padding: 6px 12px; border: 1px solid var(--rule);
-    border-radius: 20px; background: var(--paper);
-    transition: all .2s ease;
-  }
-  .links a:hover {
-    border-color: var(--accent); color: var(--accent);
-    transform: translateY(-1px);
-  }
-  
-
-  /* Section */
-  section {
-    padding: 56px 0;
-    border-top: 1px solid var(--rule);
-  }
-  section h2 {
-    font-size: 13px;
-    font-family: "JetBrains Mono", monospace;
-    letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 32px;
+    font-size: 32px;
     font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+    line-height: 1.2;
   }
-  section h2 .num { color: var(--accent); margin-right: 8px; }
+  header.hero .affiliation {
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+    font-size: 16px;
+  }
+  header.hero .contact {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 14px;
+    font-family: "JetBrains Mono", monospace;
+  }
+  header.hero .contact a { color: var(--ink-soft); }
+  header.hero .social {
+    display: flex; flex-wrap: wrap;
+    gap: 4px 14px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+  }
+  header.hero .social a {
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+  header.hero .social a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ====== Sections ====== */
+  section { margin-bottom: 40px; }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+    letter-spacing: -0.01em;
+  }
 
   /* About */
   .about p {
-    font-size: 19px; line-height: 1.7;
-    color: var(--ink); margin-bottom: 18px;
+    margin-bottom: 14px;
+    color: var(--ink);
   }
   .about p:last-child { margin-bottom: 0; }
-  .about a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
-  .about a:hover { background: rgba(139, 58, 31, 0.08); }
-  .about em { color: var(--accent); font-style: normal; font-weight: 500; }
+  .about em {
+    font-style: normal;
+    font-weight: 500;
+    color: var(--accent);
+  }
+  .topics {
+    margin-top: 16px;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+  .topics strong { color: var(--ink); font-weight: 600; }
 
   /* News */
-  .news-list { list-style: none; display: grid; gap: 14px; }
+  .news-list {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
   .news-list li {
     display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 24px;
-    padding-bottom: 14px;
-    border-bottom: 1px dashed var(--rule);
-    align-items: baseline;
+    grid-template-columns: 56px 1fr;
+    gap: 16px;
+    font-size: 16px;
   }
-  .news-list li:last-child { border-bottom: none; }
   .news-list .date {
     font-family: "JetBrains Mono", monospace;
-    font-size: 12px; color: var(--muted); letter-spacing: 0.04em;
+    font-size: 13px;
+    color: var(--muted);
+    padding-top: 4px;
   }
-  .news-list .item { color: var(--ink); }
-  .news-list .item strong { font-weight: 600; color: var(--accent); }
+  .news-list strong { font-weight: 600; }
 
-  /* Education */
-  .edu-list { display: grid; gap: 28px; }
-  .edu-item { display: grid; grid-template-columns: 180px 1fr; gap: 24px; }
-  .edu-item .period {
+  /* ====== Publications (with subtle figures) ====== */
+  .pub-note {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 20px;
     font-family: "JetBrains Mono", monospace;
-    font-size: 12px; color: var(--muted); padding-top: 4px;
   }
-  .edu-item .degree { font-size: 18px; font-weight: 500; margin-bottom: 4px; }
-  .edu-item .school { color: var(--ink-soft); font-style: italic; }
-  .edu-item .detail { margin-top: 8px; font-size: 16px; color: var(--ink-soft); }
-  .edu-item a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
 
-  /* ====== Publications (with paper figures) ====== */
-  .pub-list { display: grid; gap: 44px; }
+  .year-group { margin-bottom: 28px; }
+  .year-group:last-child { margin-bottom: 0; }
+  .year-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    letter-spacing: 0.04em;
+  }
 
   .pub {
     display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 28px;
+    grid-template-columns: 200px 1fr;
+    gap: 22px;
+    margin-bottom: 22px;
     align-items: start;
   }
+  .pub:last-child { margin-bottom: 0; }
 
+  /* Figure: small, subtle, no hover lift */
   .pub .figure {
     width: 100%;
     background: var(--paper);
     border: 1px solid var(--rule);
-    border-radius: 6px;
+    border-radius: 3px;
     overflow: hidden;
-    position: relative;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(26,24,20,0.05);
-    transition: transform .25s ease, box-shadow .25s ease;
-  }
-  .pub .figure:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 14px 36px rgba(26,24,20,0.10);
   }
   .pub .figure img,
   .pub .figure video {
@@ -204,287 +196,390 @@
     object-fit: contain;
     background: var(--paper);
   }
-
+  /* Optional uniform crop */
   .pub .figure.fixed-ratio { aspect-ratio: 16 / 10; }
   .pub .figure.fixed-ratio img,
   .pub .figure.fixed-ratio video {
     width: 100%; height: 100%; object-fit: cover;
   }
 
-  .pub .figure .badge {
-    position: absolute;
-    top: 8px; left: 8px;
-    background: var(--ink);
-    color: var(--bg);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 10px;
-    padding: 3px 8px;
-    border-radius: 10px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
   .pub .meta { padding-top: 2px; }
-  .pub .venue {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 11px; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--accent);
-    margin-bottom: 8px;
-  }
-  .pub .venue .tag {
-    display: inline-block;
-    margin-left: 6px;
-    padding: 1px 6px;
-    background: rgba(139, 58, 31, 0.12);
-    border-radius: 4px;
-    font-size: 10px;
-  }
   .pub .title {
-    font-size: 20px; font-weight: 500;
-    line-height: 1.3; margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
     color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1.4;
   }
-  .pub .title a {
-    color: inherit; text-decoration: none;
-    background-image: linear-gradient(var(--accent), var(--accent));
-    background-size: 0% 1px;
-    background-repeat: no-repeat;
-    background-position: 0 100%;
-    transition: background-size .25s ease;
-  }
-  .pub .title a:hover { background-size: 100% 1px; color: var(--accent); }
   .pub .authors {
-    font-size: 15px; color: var(--ink-soft);
-    margin-bottom: 12px; line-height: 1.55;
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+    line-height: 1.5;
   }
   .pub .authors .me { font-weight: 600; color: var(--ink); }
-  .pub .pub-links { display: flex; gap: 8px; flex-wrap: wrap; }
-  .pub .pub-links a {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 11px; letter-spacing: 0.04em;
-    text-transform: uppercase; color: var(--ink-soft);
-    text-decoration: none;
-    padding: 4px 11px;
-    border: 1px solid var(--rule);
-    border-radius: 12px;
-    transition: all .2s ease;
+  .pub .venue {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
   }
-  .pub .pub-links a:hover { color: var(--accent); border-color: var(--accent); }
+  .pub .venue .tag {
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 13px;
+    font-family: "JetBrains Mono", monospace;
+    margin-left: 4px;
+  }
+  .pub .pub-links {
+    font-size: 14px;
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+  }
+  .pub .pub-links a {
+    color: var(--accent);
+    border-bottom: 1px solid transparent;
+  }
+  .pub .pub-links a:hover { border-bottom-color: var(--accent); }
+  .pub .pub-links .sep {
+    color: var(--rule);
+    margin: 0 4px;
+  }
+
+  /* Education & Experience */
+  .entry-list { display: grid; gap: 16px; }
+  .entry {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    font-size: 16px;
+  }
+  .entry .main { color: var(--ink); }
+  .entry .main .degree,
+  .entry .main .role {
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .entry .main .org { color: var(--ink-soft); }
+  .entry .main .detail {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 3px;
+  }
+  .entry .period {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: var(--muted);
+    white-space: nowrap;
+    padding-top: 3px;
+  }
 
   /* Footer */
   footer {
-    padding: 56px 0 80px;
+    margin-top: 56px;
+    padding-top: 20px;
     border-top: 1px solid var(--rule);
     color: var(--muted);
     font-family: "JetBrains Mono", monospace;
-    font-size: 12px; letter-spacing: 0.04em;
-    display: flex; justify-content: space-between;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
   }
-  footer a { color: var(--ink-soft); text-decoration: none; }
-  footer a:hover { color: var(--accent); }
 
   /* Responsive */
-  @media (max-width: 760px) {
-    body { font-size: 17px; }
-    .wrap { padding: 0 22px; }
-    nav.top ul { gap: 14px; }
-    nav.top { font-size: 11px; }
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .wrap { padding: 36px 22px 64px; }
     header.hero {
-      grid-template-columns: 1fr;
-      gap: 28px; padding: 40px 0 36px;
+      grid-template-columns: 110px 1fr;
+      gap: 20px;
     }
-    /* 모바일 환경에서도 비율에 맞게 사진이 조금 더 크게 보이도록 수정했습니다 */
-    header.hero .photo { width: 160px; height: 160px; }
-    header.hero h1 { font-size: 38px; }
-    header.hero p.tagline { font-size: 17px; }
-    section { padding: 40px 0; }
-    .news-list li { grid-template-columns: 80px 1fr; gap: 16px; }
-    .edu-item { grid-template-columns: 1fr; gap: 4px; }
-    .edu-item .period { padding-top: 0; }
-    .pub { grid-template-columns: 1fr; gap: 14px; }
-    footer { flex-direction: column; gap: 8px; }
+    header.hero .photo { width: 110px; height: 110px; }
+    header.hero h1 { font-size: 26px; }
+    h2 { font-size: 19px; }
+    .news-list li { grid-template-columns: 48px 1fr; gap: 12px; font-size: 15px; }
+    /* Stack figure on top of text on mobile */
+    .pub { grid-template-columns: 1fr; gap: 10px; }
+    .pub .figure { max-width: 280px; }
+    .entry { grid-template-columns: 1fr; gap: 2px; }
+    .entry .period { padding-top: 0; }
+    footer { flex-direction: column; gap: 4px; }
   }
 </style>
 </head>
 <body>
 
-<div class="top-bar"></div>
-
 <div class="wrap">
 
-  <nav class="top">
-    <a href="#top" class="home">IP.</a>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <header class="hero" id="top">
-    <div>
-      <div class="eyebrow">Research Scientist · Medical AI</div>
-      <h1><span class="first">Inhyuk</span> Park</h1>
-      <p class="tagline">
-        I am a Medical AI researcher at <em>VUNO Inc.</em>,
-        working on <em>self-supervised learning</em>, <em>label-noise robustness</em>,
-        and <em>multimodal models</em> for clinical applications.
-        I received my M.S. from <em>Ajou University</em>,
-        advised by <a href="https://sites.google.com/view/jongbinryu/about-me" target="_blank"><em>Prof. Jongbin Ryu</em></a>.
-      </p>
-      <div class="links">
-        <a href="mailto:dlsgurdlfkd0@gmail.com">Email</a>
-        <a href="https://scholar.google.com/">Scholar</a>
-        <a href="https://github.com/dlsgurdlfkd0">GitHub</a>
-        <a href="https://www.linkedin.com/in/inhyukpark">LinkedIn</a>
-        <a href="./cv.pdf">CV</a>
-      </div>
-    </div>
+  <!-- ============ HEADER ============ -->
+  <header class="hero">
     <div class="photo">
-      <img src="photo/photo.jpg" alt="Inhyuk Park" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&fit=crop'" />
+      <img src="photo/photo.jpg" alt="Inhyuk Park"
+           onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&fit=crop'" />
+    </div>
+    <div>
+      <h1>Inhyuk Park</h1>
+      <div class="affiliation">Research Scientist, Medical AI &middot; <a href="https://www.vuno.co/">VUNO Inc.</a></div>
+      <div class="contact">Contact: <a href="mailto:dlsgurdlfkd0@gmail.com">dlsgurdlfkd0@gmail.com</a></div>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/inhyukpark">LinkedIn</a>
+        <!-- <a href="https://scholar.google.com/">Scholar</a> -->
+        <!-- <a href="https://github.com/dlsgurdlfkd0">GitHub</a> -->
+        <!-- <a href="./cv.pdf">CV</a> -->
+      </div>
     </div>
   </header>
 
+  <!-- ============ ABOUT ============ -->
   <section id="about" class="about">
-    <h2><span class="num">01.</span>About</h2>
+    <h2>About</h2>
     <p>
-      I focus on building Medical AI systems that are both methodologically grounded
-      and clinically deployable. My current work spans
-      <em>self-supervised learning</em>,
-      <em>noisy-label cleansing</em>, and
-      <em>multimodal large language models (MLLMs)</em>
-      &mdash; directions I find particularly compelling because they address fundamental
-      challenges in medical imaging: scarce labels, pervasive label noise, and the
-      need to reason across imaging and textual modalities.
+      I am a Medical AI researcher at <a href="https://www.vuno.co/">VUNO Inc.</a>,
+      working on translating modern deep-learning methods into clinically deployable products.
+      Previously, I received my M.S. from Ajou University, advised by
+      <a href="https://sites.google.com/view/jongbinryu/about-me">Prof. Jongbin Ryu</a>.
     </p>
     <p>
-      I believe that methods proven under the strict data, reliability, and
-      regulatory constraints of medical AI tend to generalize naturally to other
-      specialized domains. What draws me to this field is exactly this bridge between rigorous general methodology and real-world clinical impact.
+      My current research spans <em>self-supervised learning</em>, <em>noisy-label cleansing</em>,
+      and <em>multimodal large language models (MLLMs)</em> &mdash; directions I find compelling
+      because they address fundamental challenges in medical imaging: scarce labels, pervasive
+      label noise, and reasoning across imaging and text. I believe methods proven under the
+      strict data and reliability constraints of medical AI tend to generalize naturally to
+      other specialized domains.
     </p>
+    <div class="topics">
+      <strong>Topics of interest</strong>: Self-Supervised Learning, Noisy-Label Learning, Medical MLLMs, Medical Image Analysis
+    </div>
   </section>
 
+  <!-- ============ NEWS ============ -->
   <section id="news">
-    <h2><span class="num">02.</span>News</h2>
+    <h2>News</h2>
     <ul class="news-list">
-      <li><span class="date">2026</span><span class="item">One papers accepted to <strong>MMFM-BIOMED Workshop at CVPR 2026</strong></span></li>
-      <li><span class="date">2026</span><span class="item">One papers accepted to <strong>ICLR 2026</strong></span></li>
-      <li><span class="date">2026</span><span class="item">Three papers accepted to <strong>ISBI 2026</strong> (1 full paper, 2 abstracts).</span></li>
-      <li><span class="date">2025</span><span class="item">Joined <strong>VUNO Inc.</strong> as a Research Scientist on the Medical AI team.</span></li>
-      <li><span class="date">2024</span><span class="item">One papers accepted to <strong>ACCV 2024</strong></span></li>
-      <li><span class="date">2024</span><span class="item">One papers accepted to <strong>Biomedical Signal Processing and Control (IF 5.1)</strong></span></li>
-      <li><span class="date">2023</span><span class="item">One papers accepted to <strong>CVAMD workshop at ICCV 2023</strong></span></li>
+      <li><span class="date">2026</span><span>One paper accepted to <strong>MMFM-BIOMED Workshop @ CVPR 2026</strong>.</span></li>
+      <li><span class="date">2026</span><span>One paper accepted to <strong>ICLR 2026</strong>.</span></li>
+      <li><span class="date">2026</span><span>Three papers accepted to <strong>ISBI 2026</strong> (1 full paper, 2 abstracts).</span></li>
+      <li><span class="date">2025</span><span>Joined <strong>VUNO Inc.</strong> as a Research Scientist on the Medical AI team.</span></li>
+      <li><span class="date">2024</span><span>One paper accepted to <strong>ACCV 2024</strong>.</span></li>
+      <li><span class="date">2024</span><span>One paper accepted to <strong>Biomedical Signal Processing and Control</strong> (IF 5.1).</span></li>
+      <li><span class="date">2023</span><span>One paper accepted to <strong>CVAMD Workshop @ ICCV 2023</strong>.</span></li>
     </ul>
   </section>
 
-  <section id="education">
-    <h2><span class="num">03.</span>Education</h2>
-    <div class="edu-list">
-      <div class="edu-item">
-        <div class="period">YYYY &mdash; YYYY</div>
-        <div>
-          <div class="degree">M.S. in Artificial Intelligence</div>
-          <div class="school">Ajou University, Suwon, Republic of Korea</div>
-          <div class="detail">
-            Advisor: <a href="https://sites.google.com/view/jongbinryu/about-me">Prof. Jongbin Ryu</a>.
-            Thesis: <em>(your thesis topic here)</em>.
+  <!-- ============ PUBLICATIONS ============
+       Grouped by year. Each entry has an optional figure on the left.
+       To add a figure: drop your teaser into ./assets/publications/YYYY_keyword/teaser.png
+       To use uniform 16:10 crops: add class="figure fixed-ratio"
+  -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <p class="pub-note">
+      * denotes equal contribution &nbsp;&middot;&nbsp; &dagger; denotes corresponding author
+    </p>
+
+    <!-- ===== 2026 ===== -->
+    <div class="year-group">
+      <div class="year-label">2026</div>
+
+      <div class="pub">
+        <div class="figure">
+          <img src="./assets/publications/2026_noisy_label/teaser.png"
+               alt="Task-Agnostic Noisy Label Detection"
+               onerror="this.src='https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=640&h=400&fit=crop'" />
+        </div>
+        <div class="meta">
+          <div class="title">Task-Agnostic Noisy Label Detection via Standardized Loss Aggregation</div>
+          <div class="authors"><span class="me">Inhyuk Park</span>, Doohyun Park&dagger;</div>
+          <div class="venue">MMFM-BIOMED Workshop @ CVPR 2026</div>
+          <div class="pub-links">
+            <a href="#">paper</a><span class="sep">|</span>
+            <a href="#">arXiv</a><span class="sep">|</span>
+            <a href="#">code</a><span class="sep">|</span>
+            <a href="#">bibtex</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TODO: ICLR 2026 논문 정보 채워주세요 -->
+      <div class="pub">
+        <div class="figure">
+          <img src="./assets/publications/2026_iclr/teaser.png"
+               alt="ICLR 2026 paper"
+               onerror="this.src='https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=640&h=400&fit=crop'" />
+        </div>
+        <div class="meta">
+          <div class="title">(ICLR 2026 paper title here)</div>
+          <div class="authors"><span class="me">Inhyuk Park</span>, Co-Authors</div>
+          <div class="venue">ICLR 2026</div>
+          <div class="pub-links">
+            <a href="#">paper</a><span class="sep">|</span>
+            <a href="#">arXiv</a><span class="sep">|</span>
+            <a href="#">code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TODO: ISBI 2026 full paper 정보 채워주세요 -->
+      <div class="pub">
+        <div class="figure">
+          <img src="./assets/publications/2026_isbi_full/teaser.png"
+               alt="ISBI 2026 full paper"
+               onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?w=640&h=400&fit=crop'" />
+        </div>
+        <div class="meta">
+          <div class="title">(ISBI 2026 full paper title here)</div>
+          <div class="authors"><span class="me">Inhyuk Park</span>, Co-Authors</div>
+          <div class="venue">IEEE ISBI 2026</div>
+          <div class="pub-links">
+            <a href="#">paper</a><span class="sep">|</span>
+            <a href="#">arXiv</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="figure">
+          <img src="./assets/publications/2026_prompt_bias/teaser.png"
+               alt="Prompt-Induced Bias in MLLMs"
+               onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=640&h=400&fit=crop'" />
+        </div>
+        <div class="meta">
+          <div class="title">Prompt-Induced Bias from One-Shot Multimodal Large Language Models Prompting in Medical Imaging</div>
+          <div class="authors"><span class="me">Inhyuk Park</span>, Jihyeon Baek, Doohyun Park</div>
+          <div class="venue">IEEE ISBI 2026 <span class="tag">[abstract]</span></div>
+          <div class="pub-links">
+            <a href="#">paper</a><span class="sep">|</span>
+            <a href="#">arXiv</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="figure">
+          <img src="./assets/publications/2026_prompt_dominance/teaser.png"
+               alt="Prompt Dominance in Medical MLLMs"
+               onerror="this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=640&h=400&fit=crop'" />
+        </div>
+        <div class="meta">
+          <div class="title">Prompt Dominance in Medical Multimodal Large Language Models</div>
+          <div class="authors"><span class="me">Inhyuk Park</span>, Jihyeon Baek, Doohyun Park</div>
+          <div class="venue">IEEE ISBI 2026 <span class="tag">[abstract]</span></div>
+          <div class="pub-links">
+            <a href="#">paper</a><span class="sep">|</span>
+            <a href="#">arXiv</a>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- ===== 2024 ===== -->
+    <div class="year-group">
+      <div class="year-label">2024</div>
+
+      <!-- TODO: ACCV 2024 -->
+      <div class="pub">
+        <div class="figure">
+          <img src="./assets/publications/2024_accv/teaser.png"
+               alt="ACCV 2024 paper"
+               onerror="this.src='https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=640&h=400&fit=crop'" />
+        </div>
+        <div class="meta">
+          <div class="title">(ACCV 2024 paper title here)</div>
+          <div class="authors"><span class="me">Inhyuk Park</span>, Co-Authors</div>
+          <div class="venue">ACCV 2024</div>
+          <div class="pub-links">
+            <a href="#">paper</a><span class="sep">|</span>
+            <a href="#">arXiv</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TODO: BSPC -->
+      <div class="pub">
+        <div class="figure">
+          <img src="./assets/publications/2024_bspc/teaser.png"
+               alt="BSPC paper"
+               onerror="this.src='https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=640&h=400&fit=crop'" />
+        </div>
+        <div class="meta">
+          <div class="title">(BSPC paper title here)</div>
+          <div class="authors"><span class="me">Inhyuk Park</span>, Co-Authors</div>
+          <div class="venue">Biomedical Signal Processing and Control <span class="tag">[IF 5.1]</span></div>
+          <div class="pub-links">
+            <a href="#">paper</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 2023 ===== -->
+    <div class="year-group">
+      <div class="year-label">2023</div>
+
+      <!-- TODO: ICCV 2023 CVAMD workshop -->
+      <div class="pub">
+        <div class="figure">
+          <img src="./assets/publications/2023_cvamd/teaser.png"
+               alt="ICCV 2023 CVAMD workshop paper"
+               onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=640&h=400&fit=crop'" />
+        </div>
+        <div class="meta">
+          <div class="title">(ICCV 2023 CVAMD workshop paper title here)</div>
+          <div class="authors"><span class="me">Inhyuk Park</span>, Co-Authors</div>
+          <div class="venue">CVAMD Workshop @ ICCV 2023</div>
+          <div class="pub-links">
+            <a href="#">paper</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
-  <section id="publications">
-    <h2><span class="num">04.</span>Selected Publications</h2>
-    <div class="pub-list">
+  <!-- ============ EDUCATION ============ -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="entry-list">
+      <div class="entry">
+        <div class="main">
+          <div class="degree">M.S. in Artificial Intelligence</div>
+          <div class="org">Ajou University, Suwon, Republic of Korea</div>
+          <div class="detail">
+            Advisor: <a href="https://sites.google.com/view/jongbinryu/about-me">Prof. Jongbin Ryu</a>
+          </div>
+        </div>
+        <div class="period">YYYY &ndash; YYYY</div>
+      </div>
 
-      <article class="pub">
-        <div class="figure">
-          <span class="badge">ISBI 2026</span>
-          <img src="./assets/publications/2026_noisy_label/teaser.png"
-               alt="Task-Agnostic Noisy Label Detection - teaser figure"
-               onerror="this.src='https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=640&h=400&fit=crop'" />
+      <!-- 학사 정보 채울 거면 아래 주석 풀어주세요
+      <div class="entry">
+        <div class="main">
+          <div class="degree">B.S. in (Your Major)</div>
+          <div class="org">(University Name), City, Republic of Korea</div>
         </div>
-        <div class="meta">
-          <div class="venue">IEEE ISBI 2026</div>
-          <h3 class="title">
-            <a href="#">Task-Agnostic Noisy Label Detection via Standardized Loss Aggregation</a>
-          </h3>
-          <div class="authors">
-            <span class="me">Inhyuk Park</span>, Doohyun Park&dagger; &nbsp;
-            <em>(&dagger; corresponding author)</em>
-          </div>
-          <div class="pub-links">
-            <a href="#">PDF</a>
-            <a href="#">arXiv</a>
-            <a href="#">Code</a>
-            <a href="#">BibTeX</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="figure">
-          <span class="badge">ISBI 2026 &middot; Abstract</span>
-          <img src="./assets/publications/2026_prompt_bias/teaser.png"
-               alt="Prompt-Induced Bias in MLLMs for Medical Imaging - teaser figure"
-               onerror="this.src='https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=640&h=400&fit=crop'" />
-        </div>
-        <div class="meta">
-          <div class="venue">IEEE ISBI 2026 <span class="tag">Abstract</span></div>
-          <h3 class="title">
-            <a href="#">Prompt-Induced Bias from One-Shot Multimodal Large Language Models Prompting in Medical Imaging</a>
-          </h3>
-          <div class="authors">
-            <span class="me">Inhyuk Park</span>, Jihyeon Baek, Doohyun Park
-          </div>
-          <div class="pub-links">
-            <a href="#">PDF</a>
-            <a href="#">arXiv</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="figure">
-          <span class="badge">ISBI 2026 &middot; Abstract</span>
-          <img src="./assets/publications/2026_prompt_dominance/teaser.png"
-               alt="Prompt Dominance in Medical MLLMs - teaser figure"
-               onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?w=640&h=400&fit=crop'" />
-        </div>
-        <div class="meta">
-          <div class="venue">IEEE ISBI 2026 <span class="tag">Abstract</span></div>
-          <h3 class="title">
-            <a href="#">Prompt Dominance in Medical Multimodal Large Language Models</a>
-          </h3>
-          <div class="authors">
-            <span class="me">Inhyuk Park</span>, Jihyeon Baek, Doohyun Park
-          </div>
-          <div class="pub-links">
-            <a href="#">PDF</a>
-            <a href="#">arXiv</a>
-          </div>
-        </div>
-      </article>
-
+        <div class="period">YYYY &ndash; YYYY</div>
+      </div>
+      -->
     </div>
   </section>
 
-  <section id="contact">
-    <h2><span class="num">05.</span>Contact</h2>
-    <p style="color: var(--ink-soft); font-size: 18px; line-height: 1.7;">
-      The best way to reach me is via email at
-      <a href="mailto:dlsgurdlfkd0@gmail.com" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft);">dlsgurdlfkd0@gmail.com</a>.
-      I'm always happy to discuss research on Medical AI, self-supervised learning,
-      MLLMs, and collaborations across domains.
-    </p>
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="entry-list">
+      <div class="entry">
+        <div class="main">
+          <div class="role">Research Scientist, Medical AI</div>
+          <div class="org"><a href="https://www.vuno.co/">VUNO Inc.</a>, Seoul, Republic of Korea</div>
+        </div>
+        <div class="period">2025 &ndash; Present</div>
+      </div>
+    </div>
   </section>
 
   <footer>
     <span>&copy; 2026 Inhyuk Park</span>
-    <span>Last updated: May 2026 &middot; <a href="https://github.com/dlsgurdlfkd0">source</a></span>
+    <span>Last updated: May 2026 &middot; <a href="https://github.com/inhyukpark2/inhyukpark2.github.io">source</a></span>
   </footer>
 
 </div>
