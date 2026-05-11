@@ -67,13 +67,15 @@
   header.hero {
     padding: 72px 0 56px;
     display: grid;
-    grid-template-columns: 1fr 160px;
+    /* 사진이 들어갈 공간을 160px에서 220px로 넓혔습니다 */
+    grid-template-columns: 1fr 220px;
     gap: 48px;
     align-items: start;
   }
   header.hero .photo {
-    width: 160px; height: 160px;
-    border-radius: 50%;
+    /* 사진 크기를 키우고 (220px), 원형(50%)에서 모서리가 살짝 둥근 정사각형(8px)으로 변경했습니다 */
+    width: 220px; height: 220px;
+    border-radius: 8px; 
     background: var(--rule);
     overflow: hidden;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 12px 32px rgba(26,24,20,0.08);
@@ -114,6 +116,7 @@
     border-color: var(--accent); color: var(--accent);
     transform: translateY(-1px);
   }
+  
 
   /* Section */
   section {
@@ -290,7 +293,8 @@
       grid-template-columns: 1fr;
       gap: 28px; padding: 40px 0 36px;
     }
-    header.hero .photo { width: 120px; height: 120px; }
+    /* 모바일 환경에서도 비율에 맞게 사진이 조금 더 크게 보이도록 수정했습니다 */
+    header.hero .photo { width: 160px; height: 160px; }
     header.hero h1 { font-size: 38px; }
     header.hero p.tagline { font-size: 17px; }
     section { padding: 40px 0; }
@@ -322,7 +326,7 @@
   <header class="hero" id="top">
     <div>
       <div class="eyebrow">Research Scientist · Medical AI</div>
-      <h1><span class="first">Inhyuk Park</h1>
+      <h1><span class="first">Inhyuk</span> Park</h1>
       <p class="tagline">
         I am a Medical AI researcher at <em>VUNO Inc.</em>,
         working on <em>self-supervised learning</em>, <em>label-noise robustness</em>,
@@ -332,10 +336,10 @@
       </p>
       <div class="links">
         <a href="mailto:dlsgurdlfkd0@gmail.com">Email</a>
-        <!-- <a href="https://scholar.google.com/">Scholar</a> -->
-        <!-- <a href="https://github.com/inhyukpark2">GitHub</a> -->
-        <a href="https://www.linkedin.com/">LinkedIn</a>
-        <!-- <a href="./cv.pdf">CV</a> -->
+        <a href="https://scholar.google.com/">Scholar</a>
+        <a href="https://github.com/dlsgurdlfkd0">GitHub</a>
+        <a href="https://www.linkedin.com/in/inhyukpark">LinkedIn</a>
+        <a href="./cv.pdf">CV</a>
       </div>
     </div>
     <div class="photo">
@@ -372,9 +376,6 @@
       <li><span class="date">2024</span><span class="item">One papers accepted to <strong>ACCV 2024</strong></span></li>
       <li><span class="date">2024</span><span class="item">One papers accepted to <strong>Biomedical Signal Processing and Control (IF 5.1)</strong></span></li>
       <li><span class="date">2023</span><span class="item">One papers accepted to <strong>CVAMD workshop at ICCV 2023</strong></span></li>
-      <!-- Add more news items here. Format:
-      <li><span class="date">YYYY</span><span class="item">Your news item with <strong>highlights</strong>.</span></li>
-      -->
     </ul>
   </section>
 
@@ -398,15 +399,6 @@
   <section id="publications">
     <h2><span class="num">04.</span>Selected Publications</h2>
     <div class="pub-list">
-
-      <!-- ============================================================
-           IMPORTANT: I pre-filled three ISBI 2026 papers I found
-           credited to "Inhyuk Park" on doohyunpark.github.io.
-           Please verify author order, equal-contribution markings,
-           and venue type (full paper vs abstract) yourself.
-           Replace the placeholder figure URLs with your actual
-           teaser figures saved under ./assets/publications/...
-           ============================================================ -->
 
       <article class="pub">
         <div class="figure">
@@ -477,24 +469,6 @@
         </div>
       </article>
 
-      <!-- Template - copy this <article> block for each new paper.
-      <article class="pub">
-        <div class="figure">
-          <img src="./assets/publications/YYYY_keyword/teaser.png" alt="..." />
-        </div>
-        <div class="meta">
-          <div class="venue">VENUE YEAR</div>
-          <h3 class="title"><a href="#">Paper Title</a></h3>
-          <div class="authors"><span class="me">Inhyuk Park</span>, Co-Author</div>
-          <div class="pub-links">
-            <a href="#">PDF</a>
-            <a href="#">arXiv</a>
-            <a href="#">Code</a>
-          </div>
-        </div>
-      </article>
-      -->
-
     </div>
   </section>
 
@@ -502,7 +476,7 @@
     <h2><span class="num">05.</span>Contact</h2>
     <p style="color: var(--ink-soft); font-size: 18px; line-height: 1.7;">
       The best way to reach me is via email at
-      <a href="mailto:inhyukpark2@example.com" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft);">inhyukpark2@example.com</a>.
+      <a href="mailto:dlsgurdlfkd0@gmail.com" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft);">dlsgurdlfkd0@gmail.com</a>.
       I'm always happy to discuss research on Medical AI, self-supervised learning,
       MLLMs, and collaborations across domains.
     </p>
@@ -510,7 +484,7 @@
 
   <footer>
     <span>&copy; 2026 Inhyuk Park</span>
-    <span>Last updated: May 2026 &middot; <a href="https://github.com/inhyukpark2">source</a></span>
+    <span>Last updated: May 2026 &middot; <a href="https://github.com/dlsgurdlfkd0">source</a></span>
   </footer>
 
 </div>
