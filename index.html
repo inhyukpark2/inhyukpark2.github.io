@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your Name | Researcher</title>
+<meta name="description" content="Personal academic homepage of Your Name." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #fbfaf6;
+    --ink: #1a1814;
+    --ink-soft: #4a463f;
+    --muted: #8a8478;
+    --rule: #e5e1d6;
+    --accent: #8b3a1f;
+    --accent-soft: #c4623e;
+    --paper: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .top-bar {
+    height: 6px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-soft) 40%, var(--ink) 100%);
+  }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Nav */
+  nav.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  nav.top .home { color: var(--ink); text-decoration: none; font-weight: 500; }
+  nav.top ul { list-style: none; display: flex; gap: 22px; }
+  nav.top a { color: var(--ink-soft); text-decoration: none; transition: color .2s ease; }
+  nav.top a:hover { color: var(--accent); }
+
+  /* Hero */
+  header.hero {
+    padding: 72px 0 56px;
+    display: grid;
+    grid-template-columns: 1fr 160px;
+    gap: 48px;
+    align-items: start;
+  }
+  header.hero .photo {
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: var(--rule);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 12px 32px rgba(26,24,20,0.08);
+  }
+  header.hero .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  header.hero .eyebrow {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  header.hero h1 {
+    font-size: 52px; font-weight: 500;
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  header.hero h1 .first { font-style: italic; font-weight: 400; }
+  header.hero p.tagline {
+    font-size: 19px; color: var(--ink-soft);
+    max-width: 56ch; margin-bottom: 24px;
+  }
+  header.hero p.tagline em { color: var(--accent); font-style: normal; font-weight: 500; }
+
+  .links {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px; letter-spacing: 0.04em;
+  }
+  .links a {
+    color: var(--ink); text-decoration: none;
+    padding: 6px 12px; border: 1px solid var(--rule);
+    border-radius: 20px; background: var(--paper);
+    transition: all .2s ease;
+  }
+  .links a:hover {
+    border-color: var(--accent); color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  /* Section */
+  section {
+    padding: 56px 0;
+    border-top: 1px solid var(--rule);
+  }
+  section h2 {
+    font-size: 13px;
+    font-family: "JetBrains Mono", monospace;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 32px;
+    font-weight: 500;
+  }
+  section h2 .num { color: var(--accent); margin-right: 8px; }
+
+  /* About */
+  .about p {
+    font-size: 19px; line-height: 1.7;
+    color: var(--ink); margin-bottom: 18px;
+  }
+  .about p:last-child { margin-bottom: 0; }
+  .about a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
+  .about a:hover { background: rgba(139, 58, 31, 0.08); }
+
+  /* News */
+  .news-list { list-style: none; display: grid; gap: 14px; }
+  .news-list li {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--rule);
+    align-items: baseline;
+  }
+  .news-list li:last-child { border-bottom: none; }
+  .news-list .date {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px; color: var(--muted); letter-spacing: 0.04em;
+  }
+  .news-list .item { color: var(--ink); }
+  .news-list .item strong { font-weight: 600; color: var(--accent); }
+
+  /* Education */
+  .edu-list { display: grid; gap: 28px; }
+  .edu-item { display: grid; grid-template-columns: 180px 1fr; gap: 24px; }
+  .edu-item .period {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px; color: var(--muted); padding-top: 4px;
+  }
+  .edu-item .degree { font-size: 18px; font-weight: 500; margin-bottom: 4px; }
+  .edu-item .school { color: var(--ink-soft); font-style: italic; }
+  .edu-item .detail { margin-top: 8px; font-size: 16px; color: var(--ink-soft); }
+
+  /* ====== Publications (with paper figures) ====== */
+  .pub-list { display: grid; gap: 44px; }
+
+  .pub {
+    display: grid;
+    grid-template-columns: 320px 1fr;  /* wider thumbnail column for paper figures */
+    gap: 28px;
+    align-items: start;
+  }
+
+  /* Figure box: handles wide/landscape paper figures, GIFs, screenshots */
+  .pub .figure {
+    width: 100%;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    /* No fixed aspect-ratio: let the image dictate it so paper figures aren't cropped */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(26,24,20,0.05);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .pub .figure:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 14px 36px rgba(26,24,20,0.10);
+  }
+  .pub .figure img,
+  .pub .figure video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    background: var(--paper);
+  }
+
+  /* Optional: pin a fixed aspect ratio when you want uniform crop */
+  .pub .figure.fixed-ratio { aspect-ratio: 16 / 10; }
+  .pub .figure.fixed-ratio img,
+  .pub .figure.fixed-ratio video {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+
+  /* Optional badge (e.g., "GIF", "Spotlight") */
+  .pub .figure .badge {
+    position: absolute;
+    top: 8px; left: 8px;
+    background: var(--ink);
+    color: var(--bg);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .pub .meta { padding-top: 2px; }
+  .pub .venue {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .pub .venue .tag {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 6px;
+    background: rgba(139, 58, 31, 0.12);
+    border-radius: 4px;
+    font-size: 10px;
+  }
+  .pub .title {
+    font-size: 20px; font-weight: 500;
+    line-height: 1.3; margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .pub .title a {
+    color: inherit; text-decoration: none;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-size: 0% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size .25s ease;
+  }
+  .pub .title a:hover { background-size: 100% 1px; color: var(--accent); }
+  .pub .authors {
+    font-size: 15px; color: var(--ink-soft);
+    margin-bottom: 12px; line-height: 1.55;
+  }
+  .pub .authors .me { font-weight: 600; color: var(--ink); }
+  .pub .pub-links { display: flex; gap: 8px; flex-wrap: wrap; }
+  .pub .pub-links a {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--ink-soft);
+    text-decoration: none;
+    padding: 4px 11px;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    transition: all .2s ease;
+  }
+  .pub .pub-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 56px 0 80px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px; letter-spacing: 0.04em;
+    display: flex; justify-content: space-between;
+  }
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  /* Responsive */
+  @media (max-width: 760px) {
+    body { font-size: 17px; }
+    .wrap { padding: 0 22px; }
+    nav.top ul { gap: 14px; }
+    nav.top { font-size: 11px; }
+    header.hero {
+      grid-template-columns: 1fr;
+      gap: 28px; padding: 40px 0 36px;
+    }
+    header.hero .photo { width: 120px; height: 120px; }
+    header.hero h1 { font-size: 38px; }
+    header.hero p.tagline { font-size: 17px; }
+    section { padding: 40px 0; }
+    .news-list li { grid-template-columns: 80px 1fr; gap: 16px; }
+    .edu-item { grid-template-columns: 1fr; gap: 4px; }
+    .edu-item .period { padding-top: 0; }
+    /* Stack figure on top of text on mobile */
+    .pub { grid-template-columns: 1fr; gap: 14px; }
+    footer { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<div class="wrap">
+
+  <nav class="top">
+    <a href="#top" class="home">YN.</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div>
+      <div class="eyebrow">Ph.D. Candidate · Machine Learning</div>
+      <h1><span class="first">Your</span> Name</h1>
+      <p class="tagline">
+        I am a researcher working on <em>generative models</em>, <em>representation learning</em>,
+        and their applications. Currently a Ph.D. candidate at <em>University Name</em>,
+        advised by <em>Prof. Advisor</em>.
+      </p>
+      <div class="links">
+        <a href="mailto:you@example.com">Email</a>
+        <a href="https://scholar.google.com/">Scholar</a>
+        <a href="https://github.com/yourname">GitHub</a>
+        <a href="https://twitter.com/yourname">Twitter</a>
+        <a href="https://linkedin.com/in/yourname">LinkedIn</a>
+        <a href="./cv.pdf">CV</a>
+      </div>
+    </div>
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&fit=crop" alt="Your Name" />
+    </div>
+  </header>
+
+  <section id="about" class="about">
+    <h2><span class="num">01.</span>About</h2>
+    <p>
+      I'm broadly interested in building intelligent systems that can perceive, reason, and act
+      in the real world. My current research focuses on diffusion models, their theoretical
+      foundations, and applications in vision and robotics.
+    </p>
+    <p>
+      Before my Ph.D., I received my B.S. in Computer Science from <a href="#">University Name</a>.
+      I've interned at <a href="#">Lab A</a> and <a href="#">Lab B</a>. I'll be graduating in 2026
+      and am on the job market — feel free to reach out!
+    </p>
+  </section>
+
+  <section id="news">
+    <h2><span class="num">02.</span>News</h2>
+    <ul class="news-list">
+      <li><span class="date">May 2026</span><span class="item">One paper accepted to <strong>NeurIPS 2026</strong>.</span></li>
+      <li><span class="date">Mar 2026</span><span class="item">Invited talk at <strong>University X</strong> on diffusion models.</span></li>
+      <li><span class="date">Jan 2026</span><span class="item">Two papers accepted to <strong>ICLR 2026</strong>.</span></li>
+      <li><span class="date">Sep 2025</span><span class="item">Started a research internship at <strong>Lab Name</strong>.</span></li>
+      <li><span class="date">Jul 2025</span><span class="item">Paper accepted to <strong>ICML 2025</strong>.</span></li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2><span class="num">03.</span>Education</h2>
+    <div class="edu-list">
+      <div class="edu-item">
+        <div class="period">2022 — Present</div>
+        <div>
+          <div class="degree">Ph.D. in Computer Science</div>
+          <div class="school">University Name, City, Country</div>
+          <div class="detail">Advisor: Prof. Advisor Name. Topic: Generative models for vision and decision-making.</div>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="period">2018 — 2022</div>
+        <div>
+          <div class="degree">B.S. in Computer Science</div>
+          <div class="school">University Name, City, Country</div>
+          <div class="detail">Summa cum laude. Thesis: A short description of your undergrad thesis.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2><span class="num">04.</span>Selected Publications</h2>
+    <div class="pub-list">
+
+      <!-- ============================================================
+           PUBLICATION TEMPLATE — copy this <article> block for each paper.
+           - <figure>: drop your paper's teaser figure (PNG/JPG/GIF/MP4)
+           - .badge: optional ("Preprint", "GIF", "Spotlight"); remove if unused
+           - .fixed-ratio: add this class on .figure to force 16:10 crop
+           ============================================================ -->
+
+      <article class="pub">
+        <div class="figure">
+          <span class="badge">Preprint</span>
+          <!-- Replace with your paper figure (landscape works best) -->
+          <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=640&h=400&fit=crop" alt="Method overview" />
+        </div>
+        <div class="meta">
+          <div class="venue">arXiv 2026 <span class="tag">Under Review</span></div>
+          <h3 class="title">
+            <a href="https://arxiv.org/abs/XXXX.XXXXX">A Brilliant Title That Describes the Method Concisely</a>
+          </h3>
+          <div class="authors">
+            <span class="me">Your Name</span>, Co-Author One, Co-Author Two, Advisor Name
+          </div>
+          <div class="pub-links">
+            <a href="#">PDF</a>
+            <a href="#">arXiv</a>
+            <a href="#">Code</a>
+            <a href="#">Project Page</a>
+            <a href="#">BibTeX</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="figure">
+          <!-- GIFs work too — just point img src at a .gif file -->
+          <img src="https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=640&h=400&fit=crop" alt="Method demo" />
+        </div>
+        <div class="meta">
+          <div class="venue">NeurIPS 2026 <span class="tag">Spotlight</span></div>
+          <h3 class="title">
+            <a href="#">Another Strong Paper Title With Clear Contribution</a>
+          </h3>
+          <div class="authors">
+            Co-Author One*, <span class="me">Your Name</span>*, Advisor Name &nbsp;
+            <em>(* equal contribution)</em>
+          </div>
+          <div class="pub-links">
+            <a href="#">PDF</a>
+            <a href="#">arXiv</a>
+            <a href="#">Code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="figure fixed-ratio">
+          <!-- .fixed-ratio crops to 16:10 — useful when figure is too tall -->
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=640&h=400&fit=crop" alt="Architecture diagram" />
+        </div>
+        <div class="meta">
+          <div class="venue">ICML 2025</div>
+          <h3 class="title">
+            <a href="#">An Earlier Paper That Established the Direction</a>
+          </h3>
+          <div class="authors">
+            <span class="me">Your Name</span>, Co-Author, Advisor Name
+          </div>
+          <div class="pub-links">
+            <a href="#">PDF</a>
+            <a href="#">arXiv</a>
+            <a href="#">Slides</a>
+            <a href="#">Poster</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="figure">
+          <!-- Inline videos also work — autoplay muted loop for demo clips -->
+          <video src="" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=640&h=400&fit=crop"></video>
+        </div>
+        <div class="meta">
+          <div class="venue">ICLR 2025</div>
+          <h3 class="title">
+            <a href="#">A Paper With a Video Demo</a>
+          </h3>
+          <div class="authors">
+            <span class="me">Your Name</span>, Advisor Name
+          </div>
+          <div class="pub-links">
+            <a href="#">PDF</a>
+            <a href="#">Code</a>
+            <a href="#">Video</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">05.</span>Contact</h2>
+    <p style="color: var(--ink-soft); font-size: 18px; line-height: 1.7;">
+      The best way to reach me is via email at
+      <a href="mailto:you@example.com" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft);">you@example.com</a>.
+      I'm always happy to chat about research, collaborations, or anything else interesting.
+    </p>
+  </section>
+
+  <footer>
+    <span>© 2026 Your Name</span>
+    <span>Last updated: May 2026 · <a href="https://github.com/yourname">source</a></span>
+  </footer>
+
+</div>
+
+</body>
+</html>
