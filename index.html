@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Your Name | Researcher</title>
-<meta name="description" content="Personal academic homepage of Your Name." />
+<title>Inhyuk Park | Medical AI Researcher</title>
+<meta name="description" content="Personal homepage of Inhyuk Park, Medical AI researcher at VUNO Inc." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -137,6 +137,7 @@
   .about p:last-child { margin-bottom: 0; }
   .about a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
   .about a:hover { background: rgba(139, 58, 31, 0.08); }
+  .about em { color: var(--accent); font-style: normal; font-weight: 500; }
 
   /* News */
   .news-list { list-style: none; display: grid; gap: 14px; }
@@ -166,18 +167,18 @@
   .edu-item .degree { font-size: 18px; font-weight: 500; margin-bottom: 4px; }
   .edu-item .school { color: var(--ink-soft); font-style: italic; }
   .edu-item .detail { margin-top: 8px; font-size: 16px; color: var(--ink-soft); }
+  .edu-item a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
 
   /* ====== Publications (with paper figures) ====== */
   .pub-list { display: grid; gap: 44px; }
 
   .pub {
     display: grid;
-    grid-template-columns: 320px 1fr;  /* wider thumbnail column for paper figures */
+    grid-template-columns: 320px 1fr;
     gap: 28px;
     align-items: start;
   }
 
-  /* Figure box: handles wide/landscape paper figures, GIFs, screenshots */
   .pub .figure {
     width: 100%;
     background: var(--paper);
@@ -185,7 +186,6 @@
     border-radius: 6px;
     overflow: hidden;
     position: relative;
-    /* No fixed aspect-ratio: let the image dictate it so paper figures aren't cropped */
     box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(26,24,20,0.05);
     transition: transform .25s ease, box-shadow .25s ease;
   }
@@ -202,14 +202,12 @@
     background: var(--paper);
   }
 
-  /* Optional: pin a fixed aspect ratio when you want uniform crop */
   .pub .figure.fixed-ratio { aspect-ratio: 16 / 10; }
   .pub .figure.fixed-ratio img,
   .pub .figure.fixed-ratio video {
     width: 100%; height: 100%; object-fit: cover;
   }
 
-  /* Optional badge (e.g., "GIF", "Spotlight") */
   .pub .figure .badge {
     position: absolute;
     top: 8px; left: 8px;
@@ -299,7 +297,6 @@
     .news-list li { grid-template-columns: 80px 1fr; gap: 16px; }
     .edu-item { grid-template-columns: 1fr; gap: 4px; }
     .edu-item .period { padding-top: 0; }
-    /* Stack figure on top of text on mobile */
     .pub { grid-template-columns: 1fr; gap: 14px; }
     footer { flex-direction: column; gap: 8px; }
   }
@@ -312,7 +309,7 @@
 <div class="wrap">
 
   <nav class="top">
-    <a href="#top" class="home">YN.</a>
+    <a href="#top" class="home">IP.</a>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#news">News</a></li>
@@ -324,55 +321,57 @@
 
   <header class="hero" id="top">
     <div>
-      <div class="eyebrow">Ph.D. Candidate · Machine Learning</div>
-      <h1><span class="first">Your</span> Name</h1>
+      <div class="eyebrow">Research Scientist · Medical AI</div>
+      <h1><span class="first">Inhyuk</span> Park</h1>
       <p class="tagline">
-        I am a researcher working on <em>generative models</em>, <em>representation learning</em>,
-        and their applications. Currently a Ph.D. candidate at <em>University Name</em>,
-        advised by <em>Prof. Advisor</em>.
+        I am a Medical AI researcher at <em>VUNO Inc.</em>,
+        working on <em>self-supervised learning</em>, <em>label-noise robustness</em>,
+        and <em>multimodal models</em> for clinical applications.
+        I received my M.S. from <em>Ajou University</em>,
+        advised by <em>Prof. Jongbin Ryu</em>.
       </p>
       <div class="links">
-        <a href="mailto:you@example.com">Email</a>
+        <a href="mailto:inhyukpark2@example.com">Email</a>
         <a href="https://scholar.google.com/">Scholar</a>
-        <a href="https://github.com/yourname">GitHub</a>
-        <a href="https://twitter.com/yourname">Twitter</a>
-        <a href="https://linkedin.com/in/yourname">LinkedIn</a>
+        <a href="https://github.com/inhyukpark2">GitHub</a>
+        <a href="https://www.linkedin.com/">LinkedIn</a>
         <a href="./cv.pdf">CV</a>
       </div>
     </div>
     <div class="photo">
-      <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&fit=crop" alt="Your Name" />
+      <img src="./photo.jpg" alt="Inhyuk Park" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&fit=crop'" />
     </div>
   </header>
 
   <section id="about" class="about">
-  <h2><span class="num">01.</span>About</h2>
-  <p>
-    I am a Medical AI researcher at <a href="https://www.vuno.co/">VUNO Inc.</a>,
-    where I develop deep learning models for clinical applications.
-    I received my M.S. from Ajou University, advised by
-    <a href="https://sites.google.com/view/jongbinryu/about-me">Prof. Jongbin Ryu</a>.
-  </p>
-  <p>
-    My research interests lie in adapting general AI methods —
-    including <em>self-supervised learning</em>, <em>noisy-label cleansing</em>,
-    and <em>multimodal large language models (MLLMs)</em> —
-    to the medical imaging domain in order to build clinically meaningful,
-    deployable products. I believe that methods proven under the strict data,
-    reliability, and regulatory constraints of medical AI tend to generalize
-    naturally to other specialized domains, and I am drawn to research that
-    bridges this gap between general methodology and real-world impact.
-  </p>
-</section>
+    <h2><span class="num">01.</span>About</h2>
+    <p>
+      I focus on building Medical AI systems that are both methodologically grounded
+      and clinically deployable. My current work spans
+      <em>self-supervised learning</em>,
+      <em>noisy-label cleansing</em>, and
+      <em>multimodal large language models (MLLMs)</em>
+      &mdash; directions I find particularly compelling because they address fundamental
+      challenges in medical imaging: scarce labels, pervasive label noise, and the
+      need to reason across imaging and textual modalities.
+    </p>
+    <p>
+      I believe that methods proven under the strict data, reliability, and
+      regulatory constraints of medical AI tend to generalize naturally to other
+      specialized domains. What draws me to this field is exactly this bridge &mdash;
+      between rigorous general methodology and real-world clinical impact.
+    </p>
+  </section>
 
   <section id="news">
     <h2><span class="num">02.</span>News</h2>
     <ul class="news-list">
-      <li><span class="date">May 2026</span><span class="item">One paper accepted to <strong>NeurIPS 2026</strong>.</span></li>
-      <li><span class="date">Mar 2026</span><span class="item">Invited talk at <strong>University X</strong> on diffusion models.</span></li>
-      <li><span class="date">Jan 2026</span><span class="item">Two papers accepted to <strong>ICLR 2026</strong>.</span></li>
-      <li><span class="date">Sep 2025</span><span class="item">Started a research internship at <strong>Lab Name</strong>.</span></li>
-      <li><span class="date">Jul 2025</span><span class="item">Paper accepted to <strong>ICML 2025</strong>.</span></li>
+      <li><span class="date">2026</span><span class="item">Three papers accepted to <strong>ISBI 2026</strong> (1 full paper, 2 abstracts).</span></li>
+      <li><span class="date">2025</span><span class="item">Joined <strong>VUNO Inc.</strong> as a Research Scientist on the Medical AI team.</span></li>
+      <li><span class="date">2024</span><span class="item">Completed my M.S. at <strong>Ajou University</strong>, advised by Prof. Jongbin Ryu.</span></li>
+      <!-- Add more news items here. Format:
+      <li><span class="date">YYYY</span><span class="item">Your news item with <strong>highlights</strong>.</span></li>
+      -->
     </ul>
   </section>
 
@@ -380,19 +379,22 @@
     <h2><span class="num">03.</span>Education</h2>
     <div class="edu-list">
       <div class="edu-item">
-        <div class="period">2022 — Present</div>
+        <div class="period">YYYY &mdash; YYYY</div>
         <div>
-          <div class="degree">Ph.D. in Computer Science</div>
-          <div class="school">University Name, City, Country</div>
-          <div class="detail">Advisor: Prof. Advisor Name. Topic: Generative models for vision and decision-making.</div>
+          <div class="degree">M.S. in Artificial Intelligence</div>
+          <div class="school">Ajou University, Suwon, Republic of Korea</div>
+          <div class="detail">
+            Advisor: <a href="https://sites.google.com/view/jongbinryu/about-me">Prof. Jongbin Ryu</a>.
+            Thesis: <em>(your thesis topic here)</em>.
+          </div>
         </div>
       </div>
       <div class="edu-item">
-        <div class="period">2018 — 2022</div>
+        <div class="period">YYYY &mdash; YYYY</div>
         <div>
-          <div class="degree">B.S. in Computer Science</div>
-          <div class="school">University Name, City, Country</div>
-          <div class="detail">Summa cum laude. Thesis: A short description of your undergrad thesis.</div>
+          <div class="degree">B.S. in (Your Major)</div>
+          <div class="school">(University Name), City, Republic of Korea</div>
+          <div class="detail">(Honors, GPA, or thesis description if applicable.)</div>
         </div>
       </div>
     </div>
@@ -403,31 +405,34 @@
     <div class="pub-list">
 
       <!-- ============================================================
-           PUBLICATION TEMPLATE — copy this <article> block for each paper.
-           - <figure>: drop your paper's teaser figure (PNG/JPG/GIF/MP4)
-           - .badge: optional ("Preprint", "GIF", "Spotlight"); remove if unused
-           - .fixed-ratio: add this class on .figure to force 16:10 crop
+           IMPORTANT: I pre-filled three ISBI 2026 papers I found
+           credited to "Inhyuk Park" on doohyunpark.github.io.
+           Please verify author order, equal-contribution markings,
+           and venue type (full paper vs abstract) yourself.
+           Replace the placeholder figure URLs with your actual
+           teaser figures saved under ./assets/publications/...
            ============================================================ -->
 
       <article class="pub">
         <div class="figure">
-          <span class="badge">Preprint</span>
-          <!-- Replace with your paper figure (landscape works best) -->
-          <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=640&h=400&fit=crop" alt="Method overview" />
+          <span class="badge">ISBI 2026</span>
+          <img src="./assets/publications/2026_noisy_label/teaser.png"
+               alt="Task-Agnostic Noisy Label Detection - teaser figure"
+               onerror="this.src='https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=640&h=400&fit=crop'" />
         </div>
         <div class="meta">
-          <div class="venue">arXiv 2026 <span class="tag">Under Review</span></div>
+          <div class="venue">IEEE ISBI 2026</div>
           <h3 class="title">
-            <a href="https://arxiv.org/abs/XXXX.XXXXX">A Brilliant Title That Describes the Method Concisely</a>
+            <a href="#">Task-Agnostic Noisy Label Detection via Standardized Loss Aggregation</a>
           </h3>
           <div class="authors">
-            <span class="me">Your Name</span>, Co-Author One, Co-Author Two, Advisor Name
+            <span class="me">Inhyuk Park</span>, Doohyun Park&dagger; &nbsp;
+            <em>(&dagger; corresponding author)</em>
           </div>
           <div class="pub-links">
             <a href="#">PDF</a>
             <a href="#">arXiv</a>
             <a href="#">Code</a>
-            <a href="#">Project Page</a>
             <a href="#">BibTeX</a>
           </div>
         </div>
@@ -435,68 +440,65 @@
 
       <article class="pub">
         <div class="figure">
-          <!-- GIFs work too — just point img src at a .gif file -->
-          <img src="https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=640&h=400&fit=crop" alt="Method demo" />
+          <span class="badge">ISBI 2026 &middot; Abstract</span>
+          <img src="./assets/publications/2026_prompt_bias/teaser.png"
+               alt="Prompt-Induced Bias in MLLMs for Medical Imaging - teaser figure"
+               onerror="this.src='https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=640&h=400&fit=crop'" />
         </div>
         <div class="meta">
-          <div class="venue">NeurIPS 2026 <span class="tag">Spotlight</span></div>
+          <div class="venue">IEEE ISBI 2026 <span class="tag">Abstract</span></div>
           <h3 class="title">
-            <a href="#">Another Strong Paper Title With Clear Contribution</a>
+            <a href="#">Prompt-Induced Bias from One-Shot Multimodal Large Language Models Prompting in Medical Imaging</a>
           </h3>
           <div class="authors">
-            Co-Author One*, <span class="me">Your Name</span>*, Advisor Name &nbsp;
-            <em>(* equal contribution)</em>
+            <span class="me">Inhyuk Park</span>, Jihyeon Baek, Doohyun Park
           </div>
           <div class="pub-links">
             <a href="#">PDF</a>
             <a href="#">arXiv</a>
-            <a href="#">Code</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="figure fixed-ratio">
-          <!-- .fixed-ratio crops to 16:10 — useful when figure is too tall -->
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=640&h=400&fit=crop" alt="Architecture diagram" />
-        </div>
-        <div class="meta">
-          <div class="venue">ICML 2025</div>
-          <h3 class="title">
-            <a href="#">An Earlier Paper That Established the Direction</a>
-          </h3>
-          <div class="authors">
-            <span class="me">Your Name</span>, Co-Author, Advisor Name
-          </div>
-          <div class="pub-links">
-            <a href="#">PDF</a>
-            <a href="#">arXiv</a>
-            <a href="#">Slides</a>
-            <a href="#">Poster</a>
           </div>
         </div>
       </article>
 
       <article class="pub">
         <div class="figure">
-          <!-- Inline videos also work — autoplay muted loop for demo clips -->
-          <video src="" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=640&h=400&fit=crop"></video>
+          <span class="badge">ISBI 2026 &middot; Abstract</span>
+          <img src="./assets/publications/2026_prompt_dominance/teaser.png"
+               alt="Prompt Dominance in Medical MLLMs - teaser figure"
+               onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?w=640&h=400&fit=crop'" />
         </div>
         <div class="meta">
-          <div class="venue">ICLR 2025</div>
+          <div class="venue">IEEE ISBI 2026 <span class="tag">Abstract</span></div>
           <h3 class="title">
-            <a href="#">A Paper With a Video Demo</a>
+            <a href="#">Prompt Dominance in Medical Multimodal Large Language Models</a>
           </h3>
           <div class="authors">
-            <span class="me">Your Name</span>, Advisor Name
+            <span class="me">Inhyuk Park</span>, Jihyeon Baek, Doohyun Park
           </div>
           <div class="pub-links">
             <a href="#">PDF</a>
-            <a href="#">Code</a>
-            <a href="#">Video</a>
+            <a href="#">arXiv</a>
           </div>
         </div>
       </article>
+
+      <!-- Template - copy this <article> block for each new paper.
+      <article class="pub">
+        <div class="figure">
+          <img src="./assets/publications/YYYY_keyword/teaser.png" alt="..." />
+        </div>
+        <div class="meta">
+          <div class="venue">VENUE YEAR</div>
+          <h3 class="title"><a href="#">Paper Title</a></h3>
+          <div class="authors"><span class="me">Inhyuk Park</span>, Co-Author</div>
+          <div class="pub-links">
+            <a href="#">PDF</a>
+            <a href="#">arXiv</a>
+            <a href="#">Code</a>
+          </div>
+        </div>
+      </article>
+      -->
 
     </div>
   </section>
@@ -505,14 +507,15 @@
     <h2><span class="num">05.</span>Contact</h2>
     <p style="color: var(--ink-soft); font-size: 18px; line-height: 1.7;">
       The best way to reach me is via email at
-      <a href="mailto:you@example.com" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft);">you@example.com</a>.
-      I'm always happy to chat about research, collaborations, or anything else interesting.
+      <a href="mailto:inhyukpark2@example.com" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft);">inhyukpark2@example.com</a>.
+      I'm always happy to discuss research on Medical AI, self-supervised learning,
+      MLLMs, and collaborations across domains.
     </p>
   </section>
 
   <footer>
-    <span>© 2026 Your Name</span>
-    <span>Last updated: May 2026 · <a href="https://github.com/yourname">source</a></span>
+    <span>&copy; 2026 Inhyuk Park</span>
+    <span>Last updated: May 2026 &middot; <a href="https://github.com/inhyukpark2">source</a></span>
   </footer>
 
 </div>
