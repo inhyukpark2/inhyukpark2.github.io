@@ -161,7 +161,10 @@
     font-family: "JetBrains Mono", monospace;
   }
 
-  .year-group { margin-bottom: 28px; }
+  .year-group { 
+    /* 기존 28px에서 64px ~ 80px 정도로 큼직하게 늘려줍니다 */
+    margin-bottom: 6px; 
+  }
   .year-group:last-child { margin-bottom: 0; }
   .year-label {
     font-family: "JetBrains Mono", monospace;
@@ -173,9 +176,12 @@
 
   .pub {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 22px;
-    margin-bottom: 22px;
+    grid-template-columns: 280px 1fr; /* 이전 답변에서 수정한 이미지 크기 */
+    gap: 24px;
+    
+    /* 이 부분을 40px 또는 48px로 시원하게 늘려주세요 */
+    margin-bottom: 48px; 
+    
     align-items: start;
   }
   .pub:last-child { margin-bottom: 0; }
@@ -202,6 +208,7 @@
   .pub .figure.fixed-ratio video {
     width: 100%; height: 100%; object-fit: cover;
   }
+  
 
   .pub .meta { padding-top: 2px; }
   .pub .title {
@@ -254,6 +261,15 @@
   .pub .pub-links .sep {
     color: var(--rule);
     margin: 0 4px;
+  }
+
+  .pub {
+    display: grid;
+    /* 기존 200px에서 280px로 수정 (원하는 크기에 맞춰 조절하세요) */
+    grid-template-columns: 280px 1fr; 
+    gap: 24px; /* 이미지가 커진 만큼 텍스트와의 간격도 살짝 넓혀주면 좋습니다 */
+    margin-bottom: 24px;
+    align-items: start;
   }
 
   /* Education & Experience */
@@ -414,7 +430,7 @@
       <!-- TODO: ICLR 2026 논문 정보 채워주세요 -->
       <div class="pub">
         <div class="figure">
-          <img src="./assets/publications/2026_iclr/teaser.png"
+          <img src="photo/iclr26.png"
                alt="ICLR 2026 paper"
                onerror="this.src='https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=640&h=400&fit=crop'" />
         </div>
@@ -424,7 +440,7 @@
           <div class="venue">ICLR 2026</div>
           <div class="pub-links">
             <!-- <a href="#">paper</a><span class="sep">|</span> -->
-            <a href="#">arXiv</a><span class="sep">|</span>
+            <a href="https://openreview.net/forum?id=K5tcKEQaUr">arXiv</a><span class="sep">|</span>
             <!-- <a href="#">code</a> -->
           </div>
         </div>
@@ -433,7 +449,7 @@
       <!-- TODO: ISBI 2026 full paper 정보 채워주세요 -->
       <div class="pub">
         <div class="figure">
-          <img src="./assets/publications/2026_isbi_full/teaser.png"
+          <img src="photo/isbi26.png"
                alt="ISBI 2026 full paper"
                onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?w=640&h=400&fit=crop'" />
         </div>
@@ -443,7 +459,7 @@
           <div class="venue">IEEE ISBI 2026</div>
           <div class="pub-links">
             <!-- <a href="#">paper</a><span class="sep">|</span> -->
-            <a href="#">arXiv</a>
+            <a href="https://arxiv.org/abs/2605.10165">arXiv</a>
           </div>
         </div>
       </div>
@@ -455,7 +471,7 @@
       <!-- TODO: ACCV 2024 -->
       <div class="pub">
         <div class="figure">
-          <img src="./assets/publications/2024_accv/teaser.png"
+          <img src="photo/accv24.png"
                alt="ACCV 2024 paper"
                onerror="this.src='https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=640&h=400&fit=crop'" />
         </div>
@@ -465,7 +481,7 @@
           <div class="venue">ACCV 2024</div>
           <div class="pub-links">
             <!-- <a href="#">paper</a><span class="sep">|</span> -->
-            <a href="#">arXiv</a>
+            <a href="https://openaccess.thecvf.com/content/ACCV2024/papers/Park_Generative_Self-Supervised_Learning_for_Medical_Image_Classification_ACCV_2024_paper.pdf">arXiv</a>
           </div>
         </div>
       </div>
@@ -473,7 +489,7 @@
       <!-- TODO: BSPC -->
       <div class="pub">
         <div class="figure">
-          <img src="./assets/publications/2024_bspc/teaser.png"
+          <img src="photo/bspc24.png"
                alt="BSPC paper"
                onerror="this.src='https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=640&h=400&fit=crop'" />
         </div>
@@ -482,7 +498,7 @@
           <div class="authors"><span class="me">Inhyuk Park</span>, WonHwa Kim, Jongbin Ryu&dagger;</div>
           <div class="venue">Biomedical Signal Processing and Control <span class="tag">[IF 5.1]</span></div>
           <div class="pub-links">
-            <a href="#">arXiv</a>
+            <a href="https://www.sciencedirect.com/science/article/pii/S1746809423013617">arXiv</a>
           </div>
         </div>
       </div>
@@ -495,7 +511,7 @@
       <!-- TODO: ICCV 2023 CVAMD workshop -->
       <div class="pub">
         <div class="figure">
-          <img src="./assets/publications/2023_cvamd/teaser.png"
+          <img src="photo/iccvw23.png"
                alt="ICCV 2023 CVAMD workshop paper"
                onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=640&h=400&fit=crop'" />
         </div>
@@ -504,12 +520,26 @@
           <div class="authors">Wongi Park, <span class="me">Inhyuk Park*</span>, Sungeun Kim, Jongbin Ryu&dagger;</div>
           <div class="venue">CVAMD Workshop @ ICCV 2023</div>
           <div class="pub-links">
-            <a href="#">arXiv</a>
+            <a href="https://arxiv.org/abs/2308.05542">arXiv</a>
           </div>
         </div>
       </div>
     </div>
 
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="entry-list">
+      <div class="entry">
+        <div class="main">
+          <div class="role">Research Scientist, Medical AI</div>
+          <div class="org"><a href="https://www.vuno.co/">VUNO Inc.</a>, Seoul, Republic of Korea</div>
+        </div>
+        <div class="period">2024 &ndash; Present</div>
+      </div>
+    </div>
   </section>
 
   <!-- ============ EDUCATION ============ -->
@@ -539,19 +569,7 @@
     </div>
   </section>
 
-  <!-- ============ EXPERIENCE ============ -->
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="entry-list">
-      <div class="entry">
-        <div class="main">
-          <div class="role">Research Scientist, Medical AI</div>
-          <div class="org"><a href="https://www.vuno.co/">VUNO Inc.</a>, Seoul, Republic of Korea</div>
-        </div>
-        <div class="period">2025 &ndash; Present</div>
-      </div>
-    </div>
-  </section>
+  
 
   <footer>
     <span>&copy; 2026 Inhyuk Park</span>
