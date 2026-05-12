@@ -331,6 +331,21 @@
     .entry .period { padding-top: 0; }
     footer { flex-direction: column; gap: 4px; }
   }
+
+  @media (max-width: 640px) {
+    /* ... (기존에 있던 다른 모바일 설정 코드들) ... */
+
+    /* 모바일에서 제목과 저자가 2줄로 줄바꿈 되도록 수정 */
+    .pub .title,
+    .pub .authors {
+      white-space: normal;          /* 데스크탑의 한 줄 고정 속성 해제 */
+      display: -webkit-box;         /* 여러 줄 말줄임표 처리를 위한 설정 */
+      -webkit-line-clamp: 2;        /* 최대 2줄까지만 허용 (원하시면 3으로 변경 가능) */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
 </style>
 </head>
 <body>
@@ -360,12 +375,16 @@
   <section id="about" class="about">
     <h2>About</h2>
     <p>
-    I am a Medical AI researcher at <a href="https://www.vuno.co/">VUNO Inc.</a>,
-    working on translating modern deep-learning methods into clinically deployable products.
-    I received my M.S. from Ajou University, advised by
-    <a href="https://sites.google.com/view/jongbinryu/about-me">Prof. Jongbin Ryu</a>.
-     Before graduate school, I spent two years as a backend engineer at a startup an experience that continues to shape how I think about building ML systems that reach users.
-  </p>
+      I am a Medical AI researcher at <a href="https://www.vuno.co/">VUNO Inc.</a>, 
+      working on translating modern deep-learning methods into clinically deployable products. 
+      I received my M.S. from Ajou University, advised by 
+      <a href="https://sites.google.com/view/jongbinryu/about-me">Prof. Jongbin Ryu</a>. 
+      Before graduate school, I spent two years as an AI Research Engineer at a 
+      <a href="https://mdtoday.co.kr/news/view/179527023426365">startup</a>, 
+      where I developed and deployed computer vision models for hair and scalp analysis. 
+      This hands-on experience in bringing AI from research to a commercial product continues 
+      to shape my perspective on building robust ML systems for real-world clinical use.
+    </p>
     <p>
       My current research spans <em>self-supervised learning</em>, <em>noisy-label cleansing</em>,
       and <em>multimodal large language models (MLLMs)</em> &mdash; directions I find compelling
@@ -534,10 +553,20 @@
     <div class="entry-list">
       <div class="entry">
         <div class="main">
-          <div class="role">Research Scientist, Medical AI</div>
+          <div class="role">AI Research Engineer, Medical AI</div>
           <div class="org"><a href="https://www.vuno.co/">VUNO Inc.</a>, Seoul, Republic of Korea</div>
         </div>
-        <div class="period">2024 &ndash; Present</div>
+        <div class="period">2024.9 &ndash; Present</div>
+      </div>
+    </div>
+    <br>
+    <div class="entry-list">
+      <div class="entry">
+        <div class="main">
+          <div class="role">AI Research Engineer</div>
+          <div class="org"><a href="https://mdtoday.co.kr/news/view/179527023426365">AIMS (Defunct)</a>, Seoul, Republic of Korea</div>
+        </div>
+        <div class="period">2019.5 &ndash; 2021.08</div>
       </div>
     </div>
   </section>
@@ -554,7 +583,7 @@
             Advisor: <a href="https://sites.google.com/view/jongbinryu/about-me">Prof. Jongbin Ryu</a>
           </div>
         </div>
-        <div class="period">2022 &ndash; 2024</div>
+        <div class="period">2022.03 &ndash; 2024.08</div>
       </div>
 
       <!-- 학사 정보 채울 거면 아래 주석 풀어주세요
