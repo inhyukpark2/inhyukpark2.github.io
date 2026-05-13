@@ -288,9 +288,10 @@
   }
   .entry .main .org { color: var(--ink-soft); }
   .entry .main .detail {
-    color: var(--muted);
-    font-size: 14px;
-    margin-top: 3px;
+      color: var(--muted);
+      font-size: 13.8px; /* 기존 14px에서 아주 살짝만 줄임 (선택 사항) */
+      letter-spacing: -0.2px; /* 자간을 미세하게 좁혀서 한 줄에 들어가도록 공간 확보 */
+      margin-top: 3px;
   }
   .entry .period {
     font-family: "JetBrains Mono", monospace;
@@ -561,25 +562,33 @@
           <div class="role">AI Research Engineer</div>
           <div class="org"><a href="https://www.vuno.co/">VUNO Inc.</a>, Seoul, Republic of Korea</div>
         </div>
-        <div class="period">2024.9 &ndash; Present</div>
+        <div class="period">2024.09 &ndash; Present</div>
       </div>
     </div>
     <br>
     <div class="entry-list">
   <div class="entry">
-    <div class="main">
-      <div class="role">AI Research Engineer</div>
-      <div class="org"><a href="https://mdtoday.co.kr/news/view/179527023426365" target="_blank">AIMS (Defunct)</a>, Seoul, Republic of Korea</div>
-      <div class="detail">
-        <strong>Registered Patent:</strong> Method of analyzing hair condition and apparatus and system of providing hair information (Patent No. 10-2329641)
-        <!-- font-family: sans-serif; 를 추가하여 강제로 폰트를 맞춤 -->
-        <span class="pub-links" style="display: inline-block; margin-left: 8px;">
-          <a href="https://patents.google.com/patent/KR102329641B1/en" target="_blank" style="font-family: sans-serif;">URL</a>
-        </span>
-      </div>
+  <div class="main">
+    <div class="role">AI Research Engineer</div>
+    <div class="org"><a href="https://mdtoday.co.kr/news/view/179527023426365" target="_blank">AIMS (Defunct)</a>, Seoul, Republic of Korea</div>
+
+    <div class="detail">
+      <strong>Registered Patent:</strong> Method of analyzing hair condition and apparatus and system of providing hair information (KR 10-2329641, granted 2021; PCT/KR2021/004802)&nbsp;<span class="pub-links" style="white-space: nowrap;">
+        <a href="https://patents.google.com/patent/KR102329641B1/en" target="_blank" style="font-family: sans-serif;">KR</a>
+        &middot;
+        <a href="https://patents.google.com/patent/WO2021215749A1/en" target="_blank" style="font-family: sans-serif;">PCT</a>
+      </span>
     </div>
-    <div class="period">2019.05 &ndash; 2021.08</div>
+
+    <div class="detail" style="margin-top: 4px;">
+      <strong>Published Patent Application:</strong> Disease prediction system and method based on deep learning using fundus image (KR 10-2021-0106096, not granted)
+      <span class="pub-links" style="display: inline-block; margin-left: 8px;">
+        <a href="https://patents.google.com/patent/KR20210106096A/en" target="_blank" style="font-family: sans-serif;">URL</a>
+      </span>
+    </div>
   </div>
+  <div class="period">2019.05 &ndash; 2021.08</div>
+</div>
 </div>
   </section>
 
