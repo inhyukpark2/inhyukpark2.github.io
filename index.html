@@ -138,24 +138,33 @@
   .topics strong { color: var(--ink); font-weight: 600; }
 
   /* News */
-  .news-list {
-    list-style: none;
-    display: grid;
-    gap: 8px;
-  }
-  .news-list li {
-    display: grid;
-    grid-template-columns: 56px 1fr;
-    gap: 16px;
-    font-size: 16px;
-  }
-  .news-list .date {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 13px;
-    color: var(--muted);
-    padding-top: 4px;
-  }
-  .news-list strong { font-weight: 600; }
+  .news-year-group { margin-bottom: 20px; }
+.news-year-group:last-child { margin-bottom: 0; }
+
+.news-year-group .news-year {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+
+.news-year-group .news-items {
+  list-style: none;
+  display: grid;
+  gap: 6px;
+  padding-left: 0;
+}
+
+.news-year-group .news-items li {
+  font-size: 16px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .news-year-group .news-items li { font-size: 15px; }
+}
 
   /* ====== Publications (with subtle figures) ====== */
   .pub-note {
@@ -426,16 +435,33 @@
 
   <!-- ============ NEWS ============ -->
   <section id="news">
-    <h2>News</h2>
-    <ul class="news-list">
-      <li><span class="date">2026</span><span>One paper accepted to <strong>MMFM-BIOMED Workshop @ CVPR 2026</strong>.</span></li>
-      <li><span class="date">2026</span><span>One paper accepted to <strong>ICLR 2026</strong>.</span></li>
-      <li><span class="date">2026</span><span>One paper accepted to <strong>IEEE ISBI 2026</strong>.</span></li>
-      <li><span class="date">2024</span><span>Joined <strong>VUNO Inc.</strong> as a Research Scientist on the Medical AI team.</span></li>
-      <li><span class="date">2024</span><span>One paper accepted to <strong>ACCV 2024</strong>.</span></li>
-      <li><span class="date">2024</span><span>One paper accepted to <strong>Biomedical Signal Processing and Control</strong> (IF 5.1).</span></li>
-      <li><span class="date">2023</span><span>One paper accepted to <strong>CVAMD Workshop @ ICCV 2023</strong>.</span></li>
+  <h2>News</h2>
+
+  <div class="news-year-group">
+    <div class="news-year">2026</div>
+    <ul class="news-items">
+      <li>One paper accepted to <strong>MMFM-BIOMED Workshop @ CVPR 2026</strong>.</li>
+      <li>One paper accepted to <strong>ICLR 2026</strong>.</li>
+      <li>One paper accepted to <strong>IEEE ISBI 2026</strong>.</li>
     </ul>
+  </div>
+
+  <div class="news-year-group">
+    <div class="news-year">2024</div>
+    <ul class="news-items">
+      <li>Joined <strong>VUNO Inc.</strong> as a Research Scientist on the Medical AI team.</li>
+      <li>One paper accepted to <strong>ACCV 2024</strong>.</li>
+      <li>One paper accepted to <strong>Biomedical Signal Processing and Control</strong> (IF 5.1).</li>
+    </ul>
+  </div>
+
+  <div class="news-year-group">
+    <div class="news-year">2023</div>
+    <ul class="news-items">
+      <li>One paper accepted to <strong>CVAMD Workshop @ ICCV 2023</strong>.</li>
+    </ul>
+  </div>
+
   </section>
 
   <!-- ============ PUBLICATIONS ============
