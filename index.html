@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Inhyuk Park | Medical AI Researcher</title>
-<meta name="description" content="Personal homepage of Inhyuk Park, Medical AI researcher at VUNO Inc." />
+<title>Inhyuk Park | AI Research Engineer</title>
+<meta name="description" content="Personal homepage of Inhyuk Park, AI Research Engineer at VUNO Inc." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,14 +58,18 @@
     margin-bottom: 48px;
   }
   header.hero .photo {
-    width: 140px; height: 140px;
+    width: 140px;
+    min-width: 140px;
+    max-width: 140px;
     background: var(--rule);
     overflow: hidden;
     border-radius: 4px;
-  }
+}
   header.hero .photo img {
-    width: 100%; height: 100%;
-    object-fit: cover; display: block;
+      display: block;
+      width: 140px;
+      height: auto;
+      max-width: 100%;
   }
   header.hero h1 {
     font-size: 32px;
@@ -333,7 +337,7 @@
     .entry .period { padding-top: 0; }
     footer { flex-direction: column; gap: 4px; }
   }
-
+  
   @media (max-width: 640px) {
     /* ... (기존에 있던 다른 모바일 설정 코드들) ... */
 
@@ -348,6 +352,21 @@
       text-overflow: ellipsis;
     }
   }
+  @media (max-width: 640px) {
+    /* ... 다른 모바일 룰들 ... */
+
+    header.hero .photo {
+        width: 110px;
+        min-width: 110px;
+        max-width: 110px;
+        height: auto;
+    }
+    header.hero .photo img {
+        width: 110px;
+        height: auto;
+        object-fit: initial;
+    }
+  } 
 </style>
 </head>
 <body>
@@ -382,7 +401,7 @@
   <section id="about" class="about">
     <h2>About</h2>
     <p>
-      I am a Medical AI researcher at <a href="https://www.vuno.co/">VUNO Inc.</a>, 
+      I am a AI research engineer at <a href="https://www.vuno.co/">VUNO Inc.</a>, 
       working on translating modern AI methods into clinically deployable products. 
       I received my M.S. from Ajou University, advised by 
       <a href="https://sites.google.com/view/jongbinryu/about-me">Prof. Jongbin Ryu</a>. 
@@ -394,7 +413,7 @@
     </p>
     <p>
       My current research spans <em>self-supervised learning</em>, <em>noisy-label cleansing</em>,
-      and <em>multimodal large language models (MLLMs)</em> &mdash; directions I find compelling
+      and <em>multimodal large language models (MLLMs)</em>  directions I find compelling
       because they address fundamental challenges in medical imaging: scarce labels, pervasive
       label noise, and reasoning across imaging and text. I believe methods proven under the
       strict data and reliability constraints of medical AI tend to generalize naturally to
