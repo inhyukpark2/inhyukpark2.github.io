@@ -1,67 +1,622 @@
-Inhyuk Park
-Inhyuk Park
-AI Research Engineer · VUNO Inc.
-Contact: dlsgurdlfkd0@gmail.com
-LinkedIn
-About
-I am an AI research engineer at VUNO Inc., translating modern AI methods into clinically deployable products. I received my M.S. from Ajou University, advised by Prof. Jongbin Ryu, and previously spent two years as an AI Research Engineer at a startup, developing and deploying computer vision models. This blend of research and productization grounds my focus on robust, clinically deployable AI systems.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inhyuk Park | AI Research Engineer</title>
+<meta name="description" content="Personal homepage of Inhyuk Park, AI Research Engineer at VUNO Inc." />
 
-My research spans self-supervised learning, noisy-label cleansing, and multimodal large language models (MLLMs) — directions I find compelling because they address fundamental challenges in medical imaging: scarce labels, pervasive label noise, and reasoning across imaging and text. I believe methods proven under medical AI's strict data and reliability constraints tend to generalize naturally to other specialized domains.
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-Topics of interest: Self-Supervised Learning, Noisy-Label Learning, MLLMs, Medical Image Analysis
-Publications
-* denotes equal contribution  
-† denotes corresponding author
+<style>
+  :root {
+    --bg: #fbfaf6;
+    --ink: #1a1814;
+    --ink-soft: #4a463f;
+    --muted: #8a8478;
+    --rule: #e5e1d6;
+    --accent: #8b3a1f;
+    --paper: #ffffff;
+  }
 
-2026
-When Prompts Mislead
-When Prompts Mislead: Textual Dominance and Diagnostic Bias in MLLMs
-MMFM-BIOMED Workshop @ CVPR 2026 URL(soon!)
-Inhyuk Park, Doohyun Park†
-Frequency-Balanced Retinal Representation Learning
-Frequency-Balanced Retinal Representation Learning with Mutual Information Regularization
-ICLR 2026 URL
-Seunghoon Lee, Seongjae Kang, Inhyuk Park, Gitaek Kwon, Jihyeon Baek, Doohyun Park†
-Task-Agnostic Noisy Label Detection
-Task-Agnostic Noisy Label Detection via Standardized Loss Aggregation
-IEEE ISBI 2026 URL
-Inhyuk Park, Doohyun Park†
-2024
-Generative Self-Supervised Learning
-Generative Self-Supervised Learning for Medical Image Recognition
-ACCV 2024 URL
-Inhyuk Park, Sungeun Kim, Jongbin Ryu†
-Style-KD
-Style-KD : Class-Imbalanced Medical Image Classification via Style Knowledge Distillation
-Biomedical Signal Processing and Control [IF 5.1] URL
-Inhyuk Park, WonHwa Kim, Jongbin Ryu†
-2023
-Robust Asymmetric Loss
-Robust Asymmetric Loss for Multi-Label Long-Tailed Learning
-CVAMD Workshop @ ICCV 2023 URL
-Wongi Park, Inhyuk Park*, Sungeun Kim, Jongbin Ryu†
-Experience
-2024.09 – Present
-AI Research Engineer
-VUNO Inc., Seoul, Republic of Korea
-Product: Conducting research to advance the diagnostic performance of VUNO Med®–Fundus AI™, an AI-based fundus image analysis solution for screening major retinal diseases, and publishing the resulting findings.
-Publications:  CVPRW 2026 · ICLR 2026 · ISBI 2026
-2019.05 – 2021.08
-AI Research Engineer
-AIMS (Defunct), Seoul, Republic of Korea
-Registered Patent: Method of analyzing hair condition and apparatus and system of providing hair information (KR 10-2329641, granted 2021; PCT/KR2021/004802)  KR · PCT · NEWS
-Yungeon Kim, Inhyuk Park, Hyunggyu Kim
-Published Patent Application: Disease prediction system and method based on deep learning using fundus image (KR 10-2021-0106096, not granted)  KR · NEWS
-Yungeon Kim, Inhyuk Park
-Education
-2022.03 – 2024.08
-M.S. in Artificial Intelligence
-Ajou University, Suwon, Republic of Korea
-Advisor: Prof. Jongbin Ryu
-Certifications
-2021.06.25
-SQLD (SQL Developer)
-Korea Data Agency (Kdata)
-Certificate Number: SQLD-041005711
-© 2026 Inhyuk Park
-Last updated: May 2026
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s ease;
+  }
+  a:hover { border-bottom-color: var(--accent); }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 64px 32px 96px;
+  }
+
+  /* ====== Header ====== */
+  header.hero {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+  header.hero .photo {
+    width: 140px;
+    min-width: 140px;
+    max-width: 140px;
+    background: var(--rule);
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  header.hero .photo img {
+    display: block;
+    width: 140px;
+    height: auto;
+    max-width: 100%;
+  }
+  header.hero h1 {
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+  header.hero .affiliation {
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+    font-size: 16px;
+  }
+  header.hero .contact {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 14px;
+    font-family: "JetBrains Mono", monospace;
+  }
+  header.hero .contact a { color: var(--ink-soft); }
+  header.hero .social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+  }
+  header.hero .social a {
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+  header.hero .social a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ====== Sections ====== */
+  section { margin-bottom: 40px; }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+    letter-spacing: -0.01em;
+  }
+
+  /* About */
+  .about p {
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .about p:last-child { margin-bottom: 0; }
+  .about em {
+    font-style: normal;
+    font-weight: 500;
+    color: var(--accent);
+  }
+  .topics {
+    margin-top: 16px;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+  .topics strong { color: var(--ink); font-weight: 600; }
+
+  /* News */
+  .news-year-group { margin-bottom: 20px; }
+  .news-year-group:last-child { margin-bottom: 0; }
+  .news-year-group .news-year {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    letter-spacing: 0.04em;
+  }
+  .news-year-group .news-items {
+    list-style: none;
+    display: grid;
+    gap: 6px;
+    padding-left: 0;
+  }
+  .news-year-group .news-items li {
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* ====== Publications ====== */
+  .pub-note {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  .year-group { margin-bottom: 24px; }
+  .year-group:last-child { margin-bottom: 0; }
+  .year-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    letter-spacing: 0.04em;
+  }
+
+  .pub {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+    align-items: start;
+  }
+  .pub:last-child { margin-bottom: 0; }
+
+  .pub .figure {
+    width: 100%;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .pub .figure img,
+  .pub .figure video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    background: var(--paper);
+  }
+  .pub .figure.fixed-ratio { aspect-ratio: 16 / 10; }
+  .pub .figure.fixed-ratio img,
+  .pub .figure.fixed-ratio video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .pub .meta { padding-top: 2px; }
+  .pub .title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .pub .authors {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+  .pub .authors .me { font-weight: 600; color: var(--ink); }
+  .pub .venue {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+  }
+  .pub .venue .tag {
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 13px;
+    font-family: "JetBrains Mono", monospace;
+    margin-left: 4px;
+  }
+  .pub .pub-links {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+  }
+  .pub .pub-links a {
+    color: var(--accent);
+    border-bottom: 1px solid transparent;
+  }
+  .pub .pub-links a:hover { border-bottom-color: var(--accent); }
+  .pub .pub-links .sep {
+    color: var(--rule);
+    margin: 0 4px;
+  }
+
+  /* Education & Experience */
+  .entry-list { display: grid; gap: 24px; }
+  .entry .main .org .pub-links {
+    font-size: 13.8px;
+    letter-spacing: -0.2px;
+  }
+  .entry {
+    display: block;
+    font-size: 16px;
+  }
+  .entry .main { color: var(--ink); }
+  .entry .main .degree,
+  .entry .main .role {
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .entry .main .org { color: var(--ink-soft); }
+  .entry .main .detail {
+    color: var(--muted);
+    font-size: 13.8px;
+    letter-spacing: -0.2px;
+    margin-top: 3px;
+  }
+  .entry .period {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .wrap { padding: 36px 22px 64px; }
+
+    header.hero {
+      grid-template-columns: 110px 1fr;
+      gap: 20px;
+    }
+    header.hero .photo {
+      width: 110px;
+      min-width: 110px;
+      max-width: 110px;
+      height: auto;
+    }
+    header.hero .photo img {
+      width: 110px;
+      height: auto;
+      object-fit: initial;
+    }
+    header.hero h1 { font-size: 26px; }
+
+    h2 { font-size: 19px; }
+
+    .news-year-group .news-items li { font-size: 15px; }
+
+    .pub { grid-template-columns: 1fr; gap: 10px; }
+    .pub .figure { max-width: 280px; }
+    .pub .title,
+    .pub .authors {
+      white-space: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    footer { flex-direction: column; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ============ HEADER ============ -->
+  <header class="hero">
+    <div class="photo">
+      <img src="photo/photo.jpg" alt="Inhyuk Park"
+           onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&fit=crop'" />
+    </div>
+    <div>
+      <h1>Inhyuk Park</h1>
+      <div class="affiliation">AI Research Engineer &middot; <a href="https://www.vuno.co/en/">VUNO Inc.</a></div>
+      <div class="contact">Contact: <a href="mailto:dlsgurdlfkd0@gmail.com">dlsgurdlfkd0@gmail.com</a></div>
+      <div class="social">
+        <div class="badge-base LI-profile-badge" data-locale="ko_KR" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="인혁-박-5901a1406" data-version="v1">
+          <a class="badge-base__link LI-simple-link" href="https://kr.linkedin.com/in/%EC%9D%B8%ED%98%81-%EB%B0%95-5901a1406?trk=profile-badge">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="about">
+    <h2>About</h2>
+    <p>
+      I am an AI research engineer at <a href="https://www.vuno.co/en/">VUNO Inc.</a>,
+      translating modern AI methods into clinically deployable products.
+      I received my M.S. from Ajou University, advised by
+      <a href="https://sites.google.com/view/jongbinryu/about-me">Prof. Jongbin Ryu</a>,
+      and previously spent two years as an AI Research Engineer at a
+      <a href="https://blog.naver.com/aims2018">startup</a>,
+      developing and deploying computer vision models.
+      This blend of research and productization grounds my focus on robust, clinically deployable AI systems.
+    </p>
+    <p>
+      My research spans <em>self-supervised learning</em>, <em>noisy-label cleansing</em>,
+      and <em>multimodal large language models (MLLMs)</em> — directions I find compelling
+      because they address fundamental challenges in medical imaging: scarce labels,
+      pervasive label noise, and reasoning across imaging and text.
+      I believe methods proven under medical AI's strict data and reliability constraints
+      tend to generalize naturally to other specialized domains.
+    </p>
+    <div class="topics">
+      <strong>Topics of interest</strong>: Self-Supervised Learning, Noisy-Label Learning, MLLMs, Medical Image Analysis
+    </div>
+  </section>
+
+  <!-- ============ NEWS (kept commented for future use) ============ -->
+  <!--<section id="news">
+    <h2>News</h2>
+
+    <div class="news-year-group">
+      <div class="news-year">2026</div>
+      <ul class="news-items">
+        <li>One paper accepted to <strong>MMFM-BIOMED Workshop @ CVPR 2026</strong>.</li>
+        <li>One paper accepted to <strong>ICLR 2026</strong>.</li>
+        <li>One paper accepted to <strong>IEEE ISBI 2026</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="news-year-group">
+      <div class="news-year">2024</div>
+      <ul class="news-items">
+        <li>One paper accepted to <strong>ACCV 2024</strong>.</li>
+        <li>One paper accepted to <strong>Biomedical Signal Processing and Control</strong> (IF 5.1).</li>
+      </ul>
+    </div>
+
+    <div class="news-year-group">
+      <div class="news-year">2023</div>
+      <ul class="news-items">
+        <li>One paper accepted to <strong>CVAMD Workshop @ ICCV 2023</strong>.</li>
+      </ul>
+    </div>
+  </section>-->
+
+  <!-- ============ PUBLICATIONS ============ -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <p class="pub-note">
+      * denotes equal contribution &nbsp; <br>&dagger; denotes corresponding author
+    </p>
+
+    <!-- ===== 2026 ===== -->
+    <div class="year-group">
+      <div class="year-label">2026</div>
+
+      <div class="pub">
+        <div class="figure">
+          <img src="photo/cvprw26.png"
+               alt="When Prompts Mislead"
+               onerror="this.src='https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=640&h=400&fit=crop'" />
+        </div>
+        <div class="meta">
+          <div class="title">When Prompts Mislead: Textual Dominance and Diagnostic Bias in MLLMs</div>
+          <div class="venue">MMFM-BIOMED Workshop @ CVPR 2026 <span class="pub-links"><a href="#">URL(soon!)</a></span></div>
+          <div class="authors"><span class="me">Inhyuk Park</span>, Doohyun Park&dagger;</div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="figure">
+          <img src="photo/iclr26.png"
+               alt="Frequency-Balanced Retinal Representation Learning"
+               onerror="this.src='https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=640&h=400&fit=crop'" />
+        </div>
+        <div class="meta">
+          <div class="title">Frequency-Balanced Retinal Representation Learning with Mutual Information Regularization</div>
+          <div class="venue">ICLR 2026 <span class="pub-links"><a href="https://openreview.net/forum?id=K5tcKEQaUr">URL</a></span></div>
+          <div class="authors">Seunghoon Lee, Seongjae Kang, <span class="me">Inhyuk Park</span>, Gitaek Kwon, Jihyeon Baek, Doohyun Park&dagger;</div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="figure">
+          <img src="photo/isbi26.png"
+               alt="Task-Agnostic Noisy Label Detection"
+               onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?w=640&h=400&fit=crop'" />
+        </div>
+        <div class="meta">
+          <div class="title">Task-Agnostic Noisy Label Detection via Standardized Loss Aggregation</div>
+          <div class="venue">IEEE ISBI 2026 <span class="pub-links"><a href="https://arxiv.org/abs/2605.10165">URL</a></span></div>
+          <div class="authors"><span class="me">Inhyuk Park</span>, Doohyun Park&dagger;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 2024 ===== -->
+    <div class="year-group">
+      <div class="year-label">2024</div>
+
+      <div class="pub">
+        <div class="figure">
+          <img src="photo/accv24.png"
+               alt="Generative Self-Supervised Learning"
+               onerror="this.src='https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=640&h=400&fit=crop'" />
+        </div>
+        <div class="meta">
+          <div class="title">Generative Self-Supervised Learning for Medical Image Recognition</div>
+          <div class="venue">ACCV 2024 <span class="pub-links"><a href="https://openaccess.thecvf.com/content/ACCV2024/html/Park_Generative_Self-Supervised_Learning_for_Medical_Image_Classification_ACCV_2024_paper.html">URL</a></span></div>
+          <div class="authors"><span class="me">Inhyuk Park</span>, Sungeun Kim, Jongbin Ryu&dagger;</div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="figure">
+          <img src="photo/bspc24.png"
+               alt="Style-KD"
+               onerror="this.src='https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=640&h=400&fit=crop'" />
+        </div>
+        <div class="meta">
+          <div class="title">Style-KD : Class-Imbalanced Medical Image Classification via Style Knowledge Distillation</div>
+          <div class="venue">Biomedical Signal Processing and Control <span class="tag">[IF 5.1]</span> <span class="pub-links"><a href="https://www.sciencedirect.com/science/article/pii/S1746809423013617">URL</a></span></div>
+          <div class="authors"><span class="me">Inhyuk Park</span>, WonHwa Kim, Jongbin Ryu&dagger;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 2023 ===== -->
+    <div class="year-group">
+      <div class="year-label">2023</div>
+
+      <div class="pub">
+        <div class="figure">
+          <img src="photo/iccvw23.png"
+               alt="Robust Asymmetric Loss"
+               onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=640&h=400&fit=crop'" />
+        </div>
+        <div class="meta">
+          <div class="title">Robust Asymmetric Loss for Multi-Label Long-Tailed Learning</div>
+          <div class="venue">CVAMD Workshop @ ICCV 2023 <span class="pub-links"><a href="https://openaccess.thecvf.com/content/ICCV2023W/CVAMD/html/Park_Robust_Asymmetric_Loss_for_Multi-Label_Long-Tailed_Learning_ICCVW_2023_paper.html">URL</a></span></div>
+          <div class="authors">Wongi Park, <span class="me">Inhyuk Park*</span>, Sungeun Kim, Jongbin Ryu&dagger;</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="entry-list">
+      <div class="entry">
+        <div class="period">2024.09 &ndash; Present</div>
+        <div class="main">
+          <div class="role">AI Research Engineer</div>
+          <div class="org"><a href="https://www.vuno.co/en/">VUNO Inc.</a>, Seoul, Republic of Korea</div>
+
+          <div class="detail">
+            <strong>Product:</strong> Conducting research to advance the diagnostic performance of <a href="https://www.vuno.co/en/fundus" target="_blank" style="white-space: nowrap;">VUNO Med<sup>&reg;</sup>&ndash;Fundus AI<sup>&trade;</sup></a>, an AI-based fundus image analysis solution for screening major retinal diseases, and publishing the resulting findings.
+          </div>
+
+          <div class="detail" style="margin-top: 4px;">
+            <strong>Publications:</strong>&nbsp;<span class="pub-links" style="white-space: nowrap;">
+              <a href="#publications" style="font-family: sans-serif;">CVPRW 2026</a>
+              &middot;
+              <a href="#publications" style="font-family: sans-serif;">ICLR 2026</a>
+              &middot;
+              <a href="#publications" style="font-family: sans-serif;">ISBI 2026</a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="period">2019.05 &ndash; 2021.08</div>
+        <div class="main">
+          <div class="role">AI Research Engineer</div>
+          <div class="org"><a href="https://blog.naver.com/aims2018" target="_blank">AIMS (Defunct)</a>, Seoul, Republic of Korea</div>
+
+          <div class="detail">
+            <strong>Registered Patent:</strong> Method of analyzing hair condition and apparatus and system of providing hair information (KR 10-2329641, granted 2021; PCT/KR2021/004802)&nbsp;<span class="pub-links" style="white-space: nowrap;">
+              <a href="https://patents.google.com/patent/KR102329641B1/en" target="_blank" style="font-family: sans-serif;">KR</a>
+              &middot;
+              <a href="https://patents.google.com/patent/WO2021215749A1/en" target="_blank" style="font-family: sans-serif;">PCT</a>
+              &middot;
+              <a href="https://mdtoday.co.kr/news/view/179527023426365" target="_blank" style="font-family: sans-serif;">NEWS</a>
+            </span>
+            <div class="inventors">Yungeon Kim, <strong>Inhyuk Park</strong>, Hyunggyu Kim</div>
+          </div>
+
+          <div class="detail" style="margin-top: 4px;">
+            <strong>Published Patent Application:</strong> Disease prediction system and method based on deep learning using fundus image (KR 10-2021-0106096, not granted)&nbsp;<span class="pub-links" style="white-space: nowrap;">
+              <a href="https://patents.google.com/patent/KR20210106096A/en" target="_blank" style="font-family: sans-serif;">KR</a>
+              &middot;
+              <a href="https://www.medifonews.com/news/article.html?no=156389" target="_blank" style="font-family: sans-serif;">NEWS</a>
+            </span>
+            <div class="inventors">Yungeon Kim, <strong>Inhyuk Park</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="entry-list">
+      <div class="entry">
+        <div class="period">2022.03 &ndash; 2024.08</div>
+        <div class="main">
+          <div class="degree">M.S. in Artificial Intelligence</div>
+          <div class="org">Ajou University, Suwon, Republic of Korea</div>
+          <div class="detail">
+            Advisor: <a href="https://sites.google.com/view/jongbinryu/about-me">Prof. Jongbin Ryu</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="entry-list">
+      <div class="entry">
+        <div class="period">2021.06.25</div>
+        <div class="main">
+          <div class="degree">SQLD (SQL Developer)</div>
+          <div class="org">Korea Data Agency (Kdata)</div>
+          <div class="detail">Certificate Number: SQLD-041005711</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>&copy; 2026 Inhyuk Park</span>
+    <span>Last updated: May 2026</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
