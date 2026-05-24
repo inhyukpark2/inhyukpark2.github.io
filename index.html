@@ -294,9 +294,7 @@
     letter-spacing: -0.2px;
   }
   .entry {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 16px;
+    display: block;        /* grid → block */
     font-size: 16px;
   }
   .entry .main { color: var(--ink); }
@@ -316,8 +314,8 @@
     font-family: "JetBrains Mono", monospace;
     font-size: 13px;
     color: var(--muted);
-    white-space: nowrap;
-    padding-top: 3px;
+    margin-bottom: 6px;    /* padding-top → margin-bottom */
+    letter-spacing: 0.04em; /* publications의 year-label과 톤 맞추기 */
   }
 
   /* Footer */
@@ -580,35 +578,37 @@
 
   <!-- ============ EXPERIENCE ============ -->
   <section id="experience">
-    <h2>Experience</h2>
-    <div class="entry-list">
-      <div class="entry">
-        <div class="main">
-          <div class="role">AI Research Engineer</div>
-          <div class="org"><a href="https://www.vuno.co/">VUNO Inc.</a>, Seoul, Republic of Korea</div>
+  <h2>Experience</h2>
 
-          <div class="detail">
-            <strong>Product:</strong> Conducting research to advance the diagnostic performance of <strong style="white-space: nowrap;">VUNO Med<sup>&reg;</sup>&ndash;Fundus AI<sup>&trade;</sup></strong>, an AI-based fundus image analysis solution for screening major retinal diseases.
-          </div>
-
-          <div class="detail" style="margin-top: 4px;">
-            <strong>Resulting Publications:</strong>&nbsp;<span class="pub-links" style="white-space: nowrap;">
-              <a href="#publications" style="font-family: sans-serif;">CVPRW 2026</a>
-              &middot;
-              <a href="#publications" style="font-family: sans-serif;">ICLR 2026</a>
-              &middot;
-              <a href="#publications" style="font-family: sans-serif;">ISBI 2026</a>
-            </span>
-          </div>
-        </div>
-        <div class="period">2024.09 &ndash; Present</div>
-      </div>
-    </div>
-    <br>
-    <!-- 이하 AIMS 항목은 그대로 유지 -->
-    <br>
   <div class="entry-list">
     <div class="entry">
+      <div class="period">2024.09 &ndash; Present</div>
+      <div class="main">
+        <div class="role">AI Research Engineer</div>
+        <div class="org"><a href="https://www.vuno.co/">VUNO Inc.</a>, Seoul, Republic of Korea</div>
+
+        <div class="detail">
+          <strong>Product:</strong> Conducting research to advance the diagnostic performance of <strong style="white-space: nowrap;">VUNO Med<sup>&reg;</sup>&ndash;Fundus AI<sup>&trade;</sup></strong>, an AI-based fundus image analysis solution for screening major retinal diseases.
+        </div>
+
+        <div class="detail" style="margin-top: 4px;">
+          <strong>Resulting Publications:</strong>&nbsp;<span class="pub-links" style="white-space: nowrap;">
+            <a href="#publications" style="font-family: sans-serif;">CVPRW 2026</a>
+            &middot;
+            <a href="#publications" style="font-family: sans-serif;">ICLR 2026</a>
+            &middot;
+            <a href="#publications" style="font-family: sans-serif;">ISBI 2026</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="entry-list">
+    <div class="entry">
+      <div class="period">2019.05 &ndash; 2021.08</div>
       <div class="main">
         <div class="role">AI Research Engineer</div>
         <div class="org"><a href="https://blog.naver.com/aims2018" target="_blank">AIMS (Defunct)</a>, Seoul, Republic of Korea</div>
@@ -633,16 +633,16 @@
           <div class="inventors">Yungeon Kim, <strong>Inhyuk Park</strong></div>
         </div>
       </div>
-      <div class="period">2019.05 &ndash; 2021.08</div>
     </div>
   </div>
-  </section>
+</section>
 
   <!-- ============ EDUCATION ============ -->
   <section id="education">
     <h2>Education</h2>
     <div class="entry-list">
       <div class="entry">
+        <div class="period">2022.03 &ndash; 2024.08</div>
         <div class="main">
           <div class="degree">M.S. in Artificial Intelligence</div>
           <div class="org">Ajou University, Suwon, Republic of Korea</div>
@@ -650,7 +650,6 @@
             Advisor: <a href="https://sites.google.com/view/jongbinryu/about-me">Prof. Jongbin Ryu</a>
           </div>
         </div>
-        <div class="period">2022.03 &ndash; 2024.08</div>
       </div>
 
       <!-- 학사 정보 채울 거면 아래 주석 풀어주세요
@@ -664,6 +663,8 @@
       -->
     </div>
   </section>
+
+  
 
   <!-- ============ AWARDS ============ 
   <section id="awards">
@@ -686,21 +687,13 @@
     <h2>Certifications</h2>
     <div class="entry-list">
       <div class="entry">
-        <div class="main">
-          <div class="degree">SQLD (SQL Developer)</div>
-          <!--<<div class="org">Korea Data Agency (Kdata)
-            span class="pub-links" style="white-space: nowrap;">
-              <a href="https://www.kdata.or.kr/" target="_blank" style="font-family: sans-serif;">KR</a>
-            </span>
-            </div> -->
-           <!-- <div class="org"><a href="https://www.kdata.or.kr/" target="_blank">Korea Data Agency (Kdata)</a></div>-->
-            <div class="org">Korea Data Agency (Kdata)</div>
-          <div class="detail">
-            Certificate Number: SQLD-041005711
-          </div>
-        </div>
-        <div class="period">2021.06.25</div>
+      <div class="period">2021.06.25</div>
+      <div class="main">
+        <div class="degree">SQLD (SQL Developer)</div>
+        <div class="org">Korea Data Agency (Kdata)</div>
+        <div class="detail">Certificate Number: SQLD-041005711</div>
       </div>
+    </div>
     </div>
   </section>
 
