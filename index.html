@@ -289,6 +289,68 @@
     letter-spacing: 0.04em;
   }
 
+  /* Additional (collapsible) experience */
+  details.more-exp { margin-top: 28px; }
+  details.more-exp > summary {
+    cursor: pointer;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 14px;
+    color: var(--accent);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+    letter-spacing: 0.02em;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  details.more-exp > summary::-webkit-details-marker { display: none; }
+  details.more-exp > summary::before {
+    content: "\25B8"; /* ▸ */
+    display: inline-block;
+    font-size: 12px;
+    color: var(--muted);
+    transition: transform .2s ease;
+  }
+  details.more-exp[open] > summary::before { transform: rotate(90deg); }
+  details.more-exp > summary:hover { border-bottom-color: var(--accent); }
+  details.more-exp > summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+  details.more-exp .entry-list { margin-top: 24px; }
+
+  /* Work thumbnails */
+  .work-shots {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  .work-shots figure {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+  }
+  .work-shots img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: var(--paper);
+  }
+  .work-shots figcaption {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 5px;
+    letter-spacing: 0.02em;
+  }
+
   /* Footer */
   footer {
     margin-top: 56px;
@@ -340,6 +402,9 @@
     }
 
     footer { flex-direction: column; gap: 4px; }
+
+    .work-shots figure { flex-basis: 100%; }
+    .work-shots img { max-width: 320px; }
 
     .entry .main .detail .pub-links {
     white-space: normal !important;
@@ -576,6 +641,57 @@
         </div>
       </div>
     </div>
+
+    <!-- ===== Additional (non-research) experience, hidden by default ===== -->
+    <details class="more-exp">
+      <summary>Additional experience (2015&ndash;2021)</summary>
+      <div class="entry-list">
+
+        <div class="entry">
+          <div class="period">2021.08 &ndash; 2021.12</div>
+          <div class="main">
+            <div class="role">Full-Stack Developer</div>
+            <div class="org"><a href="https://neuralworks.io/" target="_blank">NeuralWorksLab</a>, Seoul, Republic of Korea</div>
+            <div class="detail">
+              <strong>Project:</strong> Built a smart-factory monitoring dashboard for the government &ldquo;AI-based PdM Portal&rdquo; project (led by Hanwha Systems/ICT). Stack: Vue.js (frontend), FastAPI (backend), MariaDB. Implemented role-based access control (SYSADMIN / ADMIN / USER), a responsive dark/light UI, and Korean&ndash;English localization.
+            </div>
+            <div class="work-shots">
+            <figure>
+              <img src="photo/work1.png" alt="System architecture: MQTT broker, FastAPI services, InfluxDB and MariaDB, Grafana dashboards" loading="lazy" />
+              <figcaption>System architecture</figcaption>
+            </figure>
+            <figure>
+              <img src="photo/work2.png" alt="Admin dashboard: company management with role-based access control (SYSADMIN)" loading="lazy" />
+              <figcaption>Admin dashboard</figcaption>
+            </figure>
+          </div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="period">2018.03 &ndash; 2018.10</div>
+          <div class="main">
+            <div class="role">Data Analyst</div>
+            <div class="org"><a href="http://www.nobiz.co.kr/" target="_blank">NOBiz</a>, Seoul, Republic of Korea</div>
+            <div class="detail">
+              <strong>Project:</strong> Data collection and analysis for KMTC (Korea Medical Tour Cloud), a government project led by the Korea Tourism Organization. Built Python/R data pipelines, developed and automated web crawlers across ~40 target sites (Linux crontab), and cleaned, analyzed, and visualized unstructured text data (incl. word clouds), integrating public datasets for the final analysis.
+            </div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="period">2015.01 &ndash; 2017.02</div>
+          <div class="main">
+            <div class="role">HVAC Control Engineer</div>
+            <div class="org"><a href="http://eersc.com/" target="_blank">Ecoenerdigm RDZ SEM Corporation</a>, Bucheon, Republic of Korea</div>
+            <div class="detail">
+              <strong>Role:</strong> Radiant heating/cooling automatic-control design &mdash; drawing drafting, on-site construction &amp; management (on-site resident), user training, and administrative work. Projects: Ananti Club Seoul, SMT Playground, Hyundai Motorstudio, Lotte World Tower.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </details>
   </section>
 
   <!-- ============ EDUCATION ============ -->
