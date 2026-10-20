@@ -180,7 +180,7 @@
 
   .pub {
     display: grid;
-    grid-template-columns: 280px minmax(0, 1fr);
+    grid-template-columns: 280px 1fr;
     gap: 24px;
     margin-bottom: 32px;
     align-items: start;
@@ -217,12 +217,16 @@
     color: var(--ink);
     margin-bottom: 4px;
     line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .pub .authors {
     font-size: 15px;
     color: var(--ink-soft);
     margin-bottom: 4px;
     line-height: 1.5;
+    white-space: nowrap;
   }
   .pub .authors .me { font-weight: 600; color: var(--ink); }
   .pub .venue {
@@ -387,6 +391,15 @@
 
     .pub { grid-template-columns: 1fr; gap: 10px; }
     .pub .figure { max-width: 280px; }
+    .pub .title,
+    .pub .authors {
+      white-space: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
     footer { flex-direction: column; gap: 4px; }
 
